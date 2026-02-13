@@ -1,0 +1,34 @@
+{
+  "path_rules": [
+    {
+      "contains": "polar",
+      "class": "Polarization"
+    },
+    {
+      "contains": "tcc",
+      "class": "Tcc"
+    },
+    {
+      "contains": "omega",
+      "class": "Omega"
+    },
+    {
+      "contains": "x3872",
+      "class": "X3872"
+    },
+    {
+      "contains": "baryon",
+      "class": "Baryons"
+    }
+  ],
+  "stem_rules": [
+    {
+      "regex": "^(meson|baryon|neutron|proton)",
+      "class": "Particle Cartoons"
+    },
+    {
+      "regex": "(decay|collision)",
+      "class": "Decay and Collision"
+    }
+  ]
+}

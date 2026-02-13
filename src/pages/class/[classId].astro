@@ -1,0 +1,79 @@
+---
+import "../../styles/global.css";
+import gallery from "../../generated/gallery-index.json";
+
+export async function getStaticPaths() {
+  return gallery.classes.map((item) => ({
+    params: { classId: item.class_id },
+    props: { classItem: item }
+  }));
+}
+
+const { classItem } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{classItem.class_name} | TikZ Gallery</title>
+  </head>
+  <body>
+    <main>
+      <a class="back" href="/">Back to classes</a>
+      <section class="hero banner">
+        <h1>{classItem.class_name}</h1>
+        <p>{classItem.figure_count} figures in this class</p>
+      </section>
+
+      <section class="grid">
+        {classItem.figures.map((figure) => (
+          <article class="card">
+            {figure.thumb_url ? (
+              <img class="thumb" src={figure.thumb_url} alt={figure.title} loading="lazy" />
+            ) : (
+              <div class="thumb placeholder" aria-hidden="true"></div>
+            )}
+            <h3>{figure.stem}</h3>
+            {figure.duplicate_count > 1 ? <p class="meta">{figure.duplicate_count} duplicates merged</p> : null}
+            <div class="actions">
+              <button class="btn primary copy-code" data-code={encodeURIComponent(figure.tex_code)}>Copy TikZ</button>
+              {figure.png_url ? (
+                <a class="btn" href={figure.png_url} download>Download PNG</a>
+              ) : (
+                <span class="btn disabled" aria-disabled="true">Download PNG</span>
+              )}
+              {figure.pdf_url ? (
+                <a class="btn" href={figure.pdf_url} download>Download PDF</a>
+              ) : (
+                <span class="btn disabled" aria-disabled="true">Download PDF</span>
+              )}
+            </div>
+          </article>
+        ))}
+      </section>
+    </main>
+
+    <script>
+      async function copySource(text) {
+        await navigator.clipboard.writeText(text);
+      }
+
+      document.querySelectorAll(".copy-code").forEach((button) => {
+        button.addEventListener("click", async () => {
+          const encoded = button.getAttribute("data-code");
+          if (!encoded) return;
+          try {
+            await copySource(decodeURIComponent(encoded));
+            button.textContent = "Copied";
+            setTimeout(() => {
+              button.textContent = "Copy TikZ";
+            }, 900);
+          } catch {
+            button.textContent = "Copy failed";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

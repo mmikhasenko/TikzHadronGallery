@@ -1,0 +1,46 @@
+---
+import "../styles/global.css";
+import gallery from "../generated/gallery-index.json";
+
+const classes = gallery.classes.slice(0, 60);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TikZ Gallery</title>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <h1>TikZ Figure Gallery</h1>
+        <p>
+          Browse your figure classes first, then open a class to inspect every figure variant and access source and downloads.
+        </p>
+      </section>
+
+      {classes.length === 0 ? (
+        <section class="card">
+          <h2>No classes yet</h2>
+          <p class="meta">Run <code>npm run gallery:prepare -- /path/to/source</code> and rebuild.</p>
+        </section>
+      ) : (
+        <section class="grid">
+          {classes.map((item) => (
+            <a class="card" href={`/class/${item.class_id}/`}>
+              {item.class_thumb_url ? (
+                <img class="thumb class-thumb" src={item.class_thumb_url} alt={item.class_name} loading="lazy" />
+              ) : (
+                <div class="thumb placeholder" aria-hidden="true"></div>
+              )}
+              <h2>{item.class_name}</h2>
+              <p class="meta">{item.figure_count} figures</p>
+              <span class="badge">class</span>
+            </a>
+          ))}
+        </section>
+      )}
+    </main>
+  </body>
+</html>
