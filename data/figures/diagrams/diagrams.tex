@@ -1,0 +1,58 @@
+%% Up Up
+\newcommand{\conUpUp}[2]{\ensuremath{
+    \begin{tikzpicture}[baseline=0cm,scale=0.2]
+      \draw[thick] (-2.5,1.2) -- node[yshift=0.1cm] {\scalebox{0.5}{$#1$}} (-0.5,1.2);
+      \draw[thick] (-2.5,0.8) -- (-0.5,0.8);
+      \draw[thick] (-2.5,-1)  -- (-0.5, -1);
+
+      \draw[thick] (0.5,1.2) -- node[yshift=0.1cm] {\scalebox{0.5}{$#2$}} (2.5,1.2);
+      \draw[thick] (0.5,0.8) -- (2.5,0.8);
+      \draw[thick] (0.5,-1)  -- (2.5, -1);
+      % \fill[black] (0,-1) circle [radius=0.4];
+      \node[circle,draw,inner sep=0pt,minimum size=15pt, fill=white] () at (0,0) {};
+      \node[circle,draw,inner sep=0pt,minimum size=15pt, fill=white,pattern=north east lines] () at (0,0) {};
+    \end{tikzpicture}}}
+
+\newcommand{\disUpUp}[2]{\ensuremath{
+    \begin{tikzpicture}[baseline=0cm,scale=0.2]
+      \draw[thick] (-2.5,1.2) -- node[yshift=0.1cm] {\scalebox{0.5}{$#1$}} (-0.5,1.2);
+      \draw[thick] (-2.5,0.8) -- (-0.5,0.8);
+      \draw[thick] (-2.5,-1)  -- (0, -1);
+
+      \draw[thick] (0.5,1.2) -- node[yshift=0.1cm] {\scalebox{0.5}{$#2$}} (2.5,1.2);
+      \draw[thick] (0.5,0.8) -- (2.5,0.8);
+      \draw[thick] (0,-1)  -- (2.5, -1);
+
+      % \fill[black] (0,-1) circle [radius=0.4];
+      \node[circle,draw,inner sep=0pt,minimum size=8pt, fill=white] () at (0,1) {};
+    \end{tikzpicture}}}
+
+%% Down Up
+\newcommand{\conDnUp}[2]{\ensuremath{
+    \begin{tikzpicture}[baseline=0cm,scale=0.2]
+      \draw[thick] (-2.5,1.2) -- (-0.5,1.2);
+      \draw[thick] (-2.5,-0.8) -- (-0.5,-0.8);
+      \draw[thick] (-2.5,-1.2)  -- node[yshift=-0.1cm] {\scalebox{0.5}{$#1$}} (-0.5, -1.2);
+
+      \draw[thick] (0.5,1.2) -- node[yshift=0.1cm] {\scalebox{0.5}{$#2$}} (2.5,1.2);
+      \draw[thick] (0.5,0.8) -- (2.5,0.8);
+      \draw[thick] (0,-1)  -- (2.5, -1);
+      % \fill[black] (0,-1) circle [radius=0.4];
+      \node[circle,draw,inner sep=0pt,minimum size=15pt, fill=white] () at (0,0) {};
+      \node[circle,draw,inner sep=0pt,minimum size=15pt, fill=white,pattern=north east lines] () at (0,0) {};
+    \end{tikzpicture}}}
+
+%% Up Down
+\newcommand{\conUpDn}[2]{\ensuremath{
+    \begin{tikzpicture}[baseline=0cm,scale=0.2]
+      \draw[thick] (-2.5,1.2) -- node[yshift=0.1cm] {\scalebox{0.5}{$#1$}} (-0.5,1.2);
+      \draw[thick] (-2.5,0.8) -- (-0.5,0.8);
+      \draw[thick] (-2.5,-1)  -- (-0.5, -1);
+
+      \draw[thick] (0.5,1.2) -- (2.5,1.2);
+      \draw[thick] (0.5,-0.8) -- (2.5,-0.8);
+      \draw[thick] (0.5,-1.2)  -- node[yshift=-0.1cm] {\scalebox{0.5}{$#2$}} (2.5, -1.2);
+      % \fill[black] (0,-1) circle [radius=0.4];
+      \node[circle,draw,inner sep=0pt,minimum size=15pt, fill=white] () at (0,0) {};
+      \node[circle,draw,inner sep=0pt,minimum size=15pt, fill=white,pattern=north east lines] () at (0,0) {};
+    \end{tikzpicture}}}

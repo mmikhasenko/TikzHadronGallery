@@ -1,0 +1,39 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{newtxtext,newtxmath}
+
+\input{mytikzset}
+
+\newcommand{\Po}{\ensuremath{\mathrm{I\!P}}}
+
+\begin{document}
+\nopagecolor
+\begin{tikzpicture}[node distance=0.6cm and 0.9cm]
+  \coordinate[label=left:{$p_b,\,p$}] (a1);
+  \coordinate[right=of a1] (a2);
+  \coordinate[right=of a2, label=right:{$p_d,\,p'$}] (a3);
+  \coordinate[above =of a2, xshift=3mm] (z1);
+  \coordinate[above =of z1, xshift=3mm] (z2);
+  \coordinate[right=of z2] (z3);
+  \coordinate[above=of z2] (b12);
+  \coordinate[left=of b12, label=left:{$p_a,\,\pi^{-}$}] (b1);
+  \coordinate[right=of b12] (b2);
+  \coordinate[      right=of b2,xshift=2mm,label=right:{$\pi^-,\,p_3$}] (b3);
+  \coordinate[above right=of b2,xshift=2mm,label=right:{$\pi^+,\,p_2$}] (b4);
+  \coordinate[below right=of b2,xshift=2mm,label=right:{$\pi^-,\,p_1$}] (b5);
+
+  \draw[scalar]  (a1) -- (a2);
+  \draw[scalar]  (a2) -- (a3);
+  \draw[scalar]  (z2) -- node[label=left:{$\pi,\,p_{t_1}$}] {} (b12);
+  \draw[vector]  (a2) -- node[label=left:{$\Po$}] {} (z2);
+  \draw[scalar]  (b1) -- (b12);
+  \draw[vector]  (b12) -- node[label=above:{$p_\xi, \xi$}] {} (b2);
+  \draw[scalar]  (b2) -- (b3);
+  \draw[scalar]  (b2) -- (b4);
+  \draw[scalar]  (z2) -- (b5);
+  \fill[black] (b12) circle [radius=0.1];
+  \fill[black] (z2) circle [radius=0.1];
+  \fill[black] (b2) circle [radius=0.05];
+  \fill[black] (a2) circle [radius=0.05];
+\end{tikzpicture}
+\end{document}

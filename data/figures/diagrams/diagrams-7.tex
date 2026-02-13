@@ -1,0 +1,82 @@
+
+\newcommand{\cascadeUp}[2]{
+\begin{tikzpicture}[node distance=0.4cm and 0.5cm, baseline=0cm]
+  \coordinate[] (b2);
+  \coordinate[left=of b2] (b1);
+  \coordinate[above right=of b2] (b4);
+  \coordinate[below right=of b2,xshift=2mm,label=right:$\pi^-$] (b5);
+  \coordinate[right=of b4,label=right:$\pi^{-}$] (c1);
+  \coordinate[below right=of b4,label=right:$\pi^{+}$] (c2);
+
+  \draw[vector]  (b1) -- node[label={above, yshift=-1mm}:{#1}] {} (b2);
+  \draw[scalar]  (b2) -- (b5);
+  \draw[vector]  (b2) -- node[label={above, yshift=-1mm, xshift=-1mm}:{ #2}] {} (b4);
+  \draw[scalar]  (b4) -- (c1);
+  \draw[scalar]  (b4) -- (c2);
+
+  \fill[black] (b2) circle [radius=0.05];
+  \fill[black] (b4) circle [radius=0.05];
+\end{tikzpicture}
+}
+
+\newcommand{\cascadeDn}[2]{
+\begin{tikzpicture}[node distance=0.4cm and 0.5cm, baseline=0cm]
+  \coordinate[] (b2);
+  \coordinate[left=of b2] (b1);
+  \coordinate[below right=of b2] (b4);
+  \coordinate[above right=of b2,xshift=2mm,label=right:$\pi^-$] (b5);
+  \coordinate[right=of b4,label=right:$\pi^{-}$] (c1);
+  \coordinate[above right=of b4,label=right:$\pi^{+}$] (c2);
+
+  \draw[vector]  (b1) -- node[label={above, yshift=-1mm}:{ #1}] {} (b2);
+  \draw[scalar]  (b2) -- (b5);
+  \draw[vector]  (b2) -- node[label={below, yshift=-1mm, xshift=-1mm}:{ #2}] {} (b4);
+  \draw[scalar]  (b4) -- (c1);
+  \draw[scalar]  (b4) -- (c2);
+
+  \fill[black] (b2) circle [radius=0.05];
+  \fill[black] (b4) circle [radius=0.05];
+\end{tikzpicture}
+}
+
+\newcommand{\longrange}[5]{
+\begin{tikzpicture}[x=0.3cm, y=0.4cm]
+
+  \node[coordinate, label =  left:{\scriptsize #1}] (a1) at (-1, 1) {};
+  \node[coordinate, label =  left:{\scriptsize #2}] (b1) at (-1,-1) {};
+  \node[coordinate, label = right:{\scriptsize #3}] (a2) at ( 1, 1) {};
+  \node[coordinate, label = right:{\scriptsize #4}] (b2) at ( 1,-1) {};
+  \node[coordinate] (z1) at ( 0.0, 0.8 ) {};
+  \node[coordinate] (z2) at ( 0.0,-0.8 ) {};
+
+  \draw[double,red]  (z1) -- node [label={right,xshift=-2mm}:{\scriptsize \color{red}#5}] {} (z2);
+  \draw[scalar]  (a1) -- (z1);
+  \draw[scalar]  (z1) -- (a2);
+  \draw[scalar]  (b1) -- (z2);
+  \draw[scalar]  (z2) -- (b2);
+  \node[circle,draw=black,fill=black,inner sep=0pt,minimum size=1mm] at (z1) {};
+  \node[circle,draw=black,fill=black,inner sep=0pt,minimum size=1mm] at (z2) {};
+
+\end{tikzpicture}
+}
+
+\newcommand{\shortrange}[5]{
+\begin{tikzpicture}[x=0.4cm, y=0.3cm]
+
+  \node[coordinate, label =  left:{\scriptsize #1}] (a1) at (-1, 1) {};
+  \node[coordinate, label =  left:{\scriptsize #2}] (b1) at (-1,-1) {};
+  \node[coordinate, label = right:{\scriptsize #3}] (a2) at ( 1, 1) {};
+  \node[coordinate, label = right:{\scriptsize #4}] (b2) at ( 1,-1) {};
+  \node[coordinate] (z1) at ( -0.8, 0.0) {};
+  \node[coordinate] (z2) at (  0.8, 0.0) {};
+
+  \draw[double,red]  (z1) -- node [label={above,yshift=-2mm}:{\scriptsize \color{red}#5}] {} (z2);
+  \draw[scalar]  (a1) -- (z1);
+  \draw[scalar]  (b1) -- (z1);
+  \draw[scalar]  (z2) -- (a2);
+  \draw[scalar]  (z2) -- (b2);
+  \node[circle,draw=black,fill=black,inner sep=0pt,minimum size=1mm] at (z1) {};
+  \node[circle,draw=black,fill=black,inner sep=0pt,minimum size=1mm] at (z2) {};
+
+\end{tikzpicture}
+}

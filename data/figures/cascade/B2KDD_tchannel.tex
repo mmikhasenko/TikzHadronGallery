@@ -1,0 +1,35 @@
+\documentclass[tikz]{standalone}
+
+% \usepackage{newtxtext,newtxmath}
+
+\input{mytikzset}
+\definecolor{myGreen}{RGB}{0,127,0}
+
+\begin{document}
+\nopagecolor
+  \begin{tikzpicture}[node distance=0.9cm and 1.3cm, baseline=1cm]
+    \coordinate[] (c0);
+    \coordinate[left=of c0,label= left:{$(\sim B^-)$}] (Lamc);
+    \coordinate[above right=of c0, xshift=6mm] (p);
+
+    \draw[scalar]  (Lamc) --  (c0);
+
+    \coordinate[above right=of c0, xshift=4mm, label=right:{$K^-$}] (p1);
+    \coordinate[      right=of c0, xshift=4mm, label=right:{$\overline{D}^0$}] (K1);
+    \coordinate[below right=of c0, xshift=4mm, label=right:{$D^0$}] (pi1);
+
+    \draw[scalar]  (c0) -- (p1);
+    \draw[scalar]  (c0) -- (pi1);
+    \draw[scalar]  (c0) -- (K1);
+
+    \draw[decorate,decoration={brace,amplitude=2pt}]
+      ([xshift=+7mm,yshift=+.2cm]p1) -- ([xshift=+7mm,yshift=-.2cm]K1)
+      node [black,midway,xshift=3mm] { $\sigma_1^t$};
+    \draw[decorate,decoration={brace,amplitude=2pt}]
+      ([xshift=+8mm,yshift=+.1cm]K1) -- ([xshift=+8mm,yshift=-.2cm]pi1)
+      node [black,midway,xshift=0.3cm] { $\sigma_2^t$};
+    \draw[decorate,decoration={brace,amplitude=2pt}]
+      ([xshift=+14mm,yshift=+.2cm]p1) -- ([xshift=+14mm,yshift=-.2cm]pi1)
+      node [black,midway,xshift=0.3cm] {$t$};
+  \end{tikzpicture}
+\end{document}

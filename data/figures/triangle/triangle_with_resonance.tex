@@ -1,0 +1,27 @@
+\documentclass[tikz]{standalone}
+
+\input{mytikzset}
+\begin{document}
+\begin{tikzpicture}[node distance=1.0cm and 1.5cm]
+    \coordinate[] (a1);
+    \coordinate[right=of a1] (a2); \coordinate[above right=of a2]
+    (b1);
+    \coordinate[below right=of a2, xshift=2mm, yshift=3mm] (b2);
+    \coordinate[right=of b1] (c1);
+    \coordinate[right=of b2, yshift=3mm] (c2);
+    \coordinate[right=of b2, yshift=-3mm] (c3);
+
+    \draw[scalar] (a1) -- (a2);
+    \draw[scalar, line width=1mm] (a2) -- (b1);
+    \draw[] (a2) -- node[above,sloped] {$\mathrm{exchange}$} (b1);
+    \draw[scalar] (a2) -- (b2);
+    \draw[scalar] (b1) -- (b2);
+    \draw[scalar] (b1) -- (c1) node[right] {$K$};
+    \draw[scalar] (b2) -- (c2) node[right] {$J/\psi$};
+    \draw[scalar] (b2) -- (c3) node[right] {$p$};
+
+    \fill[black] (a2) circle (1mm);
+    \fill[black] (b1) circle (1mm);
+    \draw[fill=white] (b2) circle (2.5mm) node[] {$T$};
+  \end{tikzpicture}
+\end{document}

@@ -1,0 +1,29 @@
+\documentclass[tikz]{standalone}
+
+\input{mytikzset}
+\definecolor{myGreen}{RGB}{0,127,0}
+
+\begin{document}
+\nopagecolor
+  \begin{tikzpicture}[node distance=0.9cm and 1.3cm, baseline=1cm]
+    \coordinate[] (c0);
+    \coordinate[left=of c0,label= left:{$F,\,\left|J,\Lambda\right\rangle$}] (Lamc);
+    \coordinate[above right=of c0, xshift=4mm] (p);
+    \coordinate[      right=of c0, xshift=4mm, label=right:{$D,\,\left|j_2,\lambda_2\right\rangle$}] (pi);
+    \coordinate[below right=of c0, xshift=4mm, label=right:{$C,\,\left|j_3,\lambda_3\right\rangle$}] (K);
+
+    \coordinate[above right=of p, xshift=-1mm, yshift=-5mm, label=right:{$l,\,\left|\frac{1}{2},\lambda_l\right\rangle$}] (mu1);
+    \coordinate[below right=of p, xshift=-1mm, yshift=+5mm, label=right:{$\bar{l}',\,\left|\frac{1}{2},\lambda_{\bar{l}}\right\rangle$}] (mu2);
+
+    \draw[scalar]  (Lamc) -- node[yshift=-1.5mm] {\tiny $0$}  (c0);
+    \draw[scalar]  (c0) -- node[yshift=-1.5mm] {\tiny $2$} (pi);
+    \draw[scalar]  (c0) -- node[yshift=-1.5mm] {\tiny $3$} (K);
+    % \draw[vector]  (c0) -- node[yshift=-1.5mm] {\tiny $1$} (p);
+
+    \draw[scalar]  (c0) -- (mu1);
+    \draw[scalar]  (c0) -- (mu2);
+
+    \draw[black, fill=white] (c0) circle (2.5ex) node[scale=0.75] {$M^{\Lambda}_{\{\lambda\}}$};
+    % \draw[black, fill=white] (p) circle (2.5ex) node[scale=0.85] {$B^{\mu}_{\!\lambda_{\!+}\!\lambda_{\!-}}$};
+  \end{tikzpicture}
+\end{document}

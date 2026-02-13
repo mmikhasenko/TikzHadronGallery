@@ -1,0 +1,20 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{newtxtext,newtxmath}
+
+\input{mytikzset}
+\usetikzlibrary{decorations.pathreplacing}
+
+\begin{document}
+\nopagecolor
+\begin{tikzpicture}[baseline=0.cm]
+  \draw[scalar] (0,0) -- node [label=above:{$a_1(1260)$}] {} (1,0);
+  \draw[vector] (1,0) -- node [label=above:{$K^*$}] {} (2,1);
+  \fill[black]  (1,0) circle [radius=0.1];
+  \draw[scalar] (1,0) -- node [label=below:{$\bar{K}$}] {} (2.5,-0.2);
+  \fill[black]  (2,1) circle [radius=0.1];
+  \draw[scalar] (2,1) -- (3,1);
+  \draw[scalar] (2,1) -- node [label=below:{$K$}] {} (2.8,0.3);
+  \node[] () at (3.15,1) {$\pi$};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,30 @@
+\documentclass[tikz]{standalone}
+
+\input{mytikzset}
+\definecolor{myGreen}{RGB}{0,127,0}
+
+\begin{document}
+\nopagecolor
+  \begin{tikzpicture}[node distance=0.9cm and 1.3cm, baseline=1cm]
+    \coordinate[] (c0);
+    \coordinate[left=of c0,label= left:{$p_0,\,\Lambda$}] (Lamc);
+    \coordinate[above right=of c0, xshift=4mm, label=right:{$p_1,\,\lambda_1$}] (p);
+    \coordinate[ right=of c0, xshift=4mm, label=right:{$p_2,\,\lambda_2$}] (K);
+    \coordinate[below right=of c0, xshift=4mm, label=right:{$p_3,\,\lambda_3$}] (pi);
+    \coordinate[below right=of c0, xshift=-3mm, yshift=5mm] (X);
+
+    \draw[scalar]  (Lamc) -- node[yshift=-1.5mm] {\tiny $0$}  (c0);
+    \draw[scalar]  (c0) -- node[yshift=-1.5mm] {\tiny $1$} (p);
+    \draw[vector]  (c0) -- (X);
+    \draw[scalar]  (X) -- node[yshift=-1.5mm] {\tiny $2$} (K);
+    \draw[scalar]  (X) -- node[yshift=-1.5mm] {\tiny $3$} (pi);
+
+    \draw[black, fill=white] (c0) circle (2.5ex) node[scale=0.8] {$M^{\Lambda}_{\{\lambda\}}$};
+
+    \draw[black, fill=black] (X) circle (0.4ex);
+    % \draw [decorate,decoration={brace,amplitude=3pt}] ($(p)+(1.4,0.1)$) -- ($(K)+(1.4,-0.1)$) node [black,midway,xshift=0.35cm] {$\sigma_3$};
+    % \draw [decorate,decoration={brace,amplitude=3pt}] ($(K)+(1.7,0.1)$) -- ($(pi)+(1.7,-0.1)$) node [black,midway,xshift=0.35cm] {$\sigma_1$};
+    % \draw [decorate,decoration={brace,amplitude=3pt}] ($(p)+(2.2,0.1)$) -- ($(pi)+(2.2,-0.1)$) node [black,midway,xshift=0.3cm] {$s$};
+
+  \end{tikzpicture}
+\end{document}

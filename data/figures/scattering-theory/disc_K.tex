@@ -1,0 +1,77 @@
+\newcommand{\deltaK}{\ensuremath{
+  \Delta_s\,
+  \begin{tikzpicture}[baseline=0cm,scale=\scl]
+    \var
+  %
+    \draw[]  (0,{ \yt}) -- (2.0,{ \yt});
+    \draw[double] (0,{-\yt}) -- (2.0,{-\yt});
+    \draw[fill=white] (\xm,0) ellipse ({1.4*\xm} and {1.6*\Rad});
+    \node[] () at ({\xm},0) {K};
+  \end{tikzpicture}  =
+  \Ksum
+  \bigg|
+  \begin{tikzpicture}[baseline=0cm,scale=\scl]
+    \var
+    \draw[double] (4.5,{\yt})  -- (5.0,{\yt});
+    \draw[]       (4.5,{-\yt}) -- (6.0,{-\yt});
+    \draw[] (5.0,{ \yt}) -- (6.0,{-\yt});
+    \draw[dotted] (5.0,{ \yt}) -- (7.0,{ \yt});
+    \draw[dotted] (6.0,{-\yt}) -- node[] {\tiny $\sum$} (7.0,{\yt});
+    \draw[dotted] (6.0,{-\yt}) -- (8.0,{-\yt});
+    \draw[] (7.0,{ \yt}) -- (8.0,{-\yt});
+    \draw[] (7.0,{ \yt}) -- (9.0,{ \yt});
+    \draw[double] (8.0,{-\yt}) -- (9.0,{-\yt});
+  %
+    \draw[fill=white] (5.0,\yt) ellipse (0.2);
+    \draw[fill=white] (6.0,-\yt) ellipse (0.2);
+    \draw[fill=white] (7.0,\yt) ellipse (0.2);
+    \draw[fill=white] (8.0,-\yt) ellipse (0.2);
+  \end{tikzpicture} +
+  \Ksum\bigg|
+    \begin{tikzpicture}[baseline=0cm,scale=\scl]
+      \var
+  %
+  \draw[double] (4.5,{-\yt})  -- (5.0,{-\yt});
+  \draw[]       (4.5,{+\yt}) -- (6.0,{+\yt});
+    % \draw[] (6.0,{-\yt}) -- (7.0,{-\yt});
+    \draw[] (5.0,{-\yt}) -- (6.0,{+\yt});
+    \draw[dotted] (5.0,{-\yt}) -- (7.0,{-\yt});
+    \draw[dotted] (6.0,{+\yt}) -- node[] {\tiny $\sum$} (7.0,{-\yt});
+    \draw[dotted] (6.0,{+\yt}) -- (8.0,{+\yt});
+    \draw[] (7.0,{-\yt}) -- (8.0,{+\yt});
+    \draw[] (7.0,{-\yt}) -- (9.0,{-\yt});
+    \draw[double] (8.0,{+\yt}) -- (9.0,{+\yt});
+  %
+    \draw[fill=white] (5.0,{-\yt}) ellipse (0.2);
+    \draw[fill=white] (6.0,{+\yt}) ellipse (0.2);
+    \draw[fill=white] (8.0,{+\yt}) ellipse (0.2);
+    \draw[fill=white] (7.0,{-\yt}) ellipse (0.2);
+  \end{tikzpicture}+
+  \Ksum\bigg|
+  \begin{tikzpicture}[baseline=0cm,scale=\scl]
+    \var
+    \draw[double] (4.5,{\yt})  -- (5.0,{\yt});
+    \draw[]       (4.5,{-\yt}) -- (6.0,{-\yt});
+    \draw[] (5.0,{ \yt}) -- (6.0,{-\yt});
+    \draw[] (5.0,{ \yt}) -- (6.5,{ \yt});
+    \draw[double] (6.0,{-\yt}) -- (6.5,{-\yt});
+  %
+    \draw[fill=white] (5.0,\yt) ellipse (0.2);
+    \draw[fill=white] (6.0,-\yt) ellipse (0.2);
+  \end{tikzpicture}+
+  \Ksum\bigg|
+    \begin{tikzpicture}[baseline=0cm,scale=\scl]
+      \var
+  %
+  \draw[double] (4.5,{-\yt})  -- (5.0,{-\yt});
+  \draw[]       (4.5,{+\yt}) -- (6.0,{+\yt});
+    % \draw[] (6.0,{-\yt}) -- (7.0,{-\yt});
+    \draw[] (5.0,{-\yt}) -- (6.0,{+\yt});
+    \draw[] (5.0,{-\yt}) -- (6.5,{-\yt});
+    \draw[double] (6.0,{+\yt}) -- (6.5,{+\yt});
+  %
+    \draw[fill=white] (5.0,{-\yt}) ellipse (0.2);
+    \draw[fill=white] (6.0,{+\yt}) ellipse (0.2);
+  \end{tikzpicture}
+}
+}

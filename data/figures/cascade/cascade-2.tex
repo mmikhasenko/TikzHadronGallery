@@ -1,0 +1,26 @@
+\documentclass[tikz]{standalone}
+
+\input{mytikzset}
+
+\begin{document}
+\nopagecolor
+\begin{tikzpicture}[node distance=0.8cm and 1.2cm, baseline=1cm]
+  \coordinate[] (b2);
+  \coordinate[left=of b2] (b1);
+  \coordinate[above right=of b2] (b4);
+  \coordinate[below right=of b2,xshift=2mm,label=right:$\pi^-$] (b5);
+  \coordinate[right=of b4,label=right:$\pi^{-}$] (c1);
+  \coordinate[below right=of b4,label=right:$\pi^{+}$] (c2);
+
+  \draw[vector]  (b1) -- node[label={above, yshift=-1mm}:{ $J^{PC} M^\epsilon$}] {} (b2);
+  \draw[scalar]  (b2) -- (b5);
+  \draw[vector]  (b2) -- node[label={above, yshift=-1mm, xshift=-1mm}:{ $\xi, S$}] {} (b4);
+  \draw[scalar]  (b4) -- (c1);
+  \draw[scalar]  (b4) -- (c2);
+
+  \draw[thin] (b2) ++(-30:5mm) arc (-30:30:5mm) node[midway, label={right, xshift=-1mm}:{$L$}] {};
+
+  \draw[black,fill=white] (b2) circle [radius=0.1];
+  \draw[black,fill=white] (b4) circle [radius=0.1];
+\end{tikzpicture}
+\end{document}

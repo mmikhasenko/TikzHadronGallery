@@ -1,0 +1,41 @@
+\documentclass[tikz]{standalone}
+
+% \usepackage{newtxtext,newtxmath}
+
+\input{mytikzset}
+\definecolor{myGreen}{RGB}{0,127,0}
+
+\begin{document}
+\nopagecolor
+  \begin{tikzpicture}[node distance=0.9cm and 1.3cm, baseline=1cm]
+    \coordinate[] (c0);
+    \coordinate[{left}=of c0,label= left:{$\Omega_b^-,\,\Lambda_0$}] (Lamc);
+    \coordinate[above right=of c0, xshift=-4mm, yshift=-6mm] (c1);
+    \coordinate[above right=of c0, xshift=4mm] (p);
+    \coordinate[      right=of c0, xshift=4mm, label=right:{$K^-$}] (K);
+    \coordinate[below right=of c0, xshift=4mm, label=right:{$\pi^-$}] (pi);
+
+    \draw[scalar]  (Lamc) -- (c0);
+    \draw[vector]  (c0) -- node[above] {$\Omega_c^{**}$} (c1);
+    \draw[scalar]  (c1) -- node[above left] {$\Xi_c^+$}   (p);
+    \draw[scalar]  (c1) -- (K);
+    \draw[scalar]  (c0) -- (pi);
+
+    \draw[] ($(c0)!0.5!(c1)$) arc(20:-24:0.5) node[yshift=2mm, xshift=5mm] {\scriptsize$l$-wave};
+
+    \fill[black] (c0) circle (1mm);
+    \fill[black] (c1) circle (1mm);
+
+    \coordinate[above right=of p, xshift=4mm, label=right:{$p,\,\lambda_p$}] (p1);
+    \coordinate[      right=of p, xshift=4mm, label=right:{$\pi^+$}] (pi1);
+    \coordinate[below right=of p, xshift=4mm, label=right:{$K^-$}] (K1);
+
+    \draw[scalar]  (p) -- (p1);
+    \draw[scalar]  (p) -- (pi1);
+    \draw[scalar]  (p) -- (K1);
+
+
+    \draw[black, fill=white] (p) circle (2.5ex) node[] {\scriptsize$B^{\Lambda\lambda_p}$};
+
+  \end{tikzpicture}
+\end{document}

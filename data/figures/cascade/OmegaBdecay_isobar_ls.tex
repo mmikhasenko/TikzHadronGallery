@@ -1,0 +1,31 @@
+\documentclass[tikz]{standalone}
+
+% \usepackage{newtxtext,newtxmath}
+
+\input{mytikzset}
+\definecolor{myGreen}{RGB}{0,127,0}
+
+\begin{document}
+\nopagecolor
+  \begin{tikzpicture}[node distance=0.9cm and 1.3cm, baseline=1cm]
+    \coordinate[] (c0);
+    \coordinate[{left}=of c0] (Lamc);
+    \coordinate[above right=of c0, xshift=-4mm, yshift=-6mm] (c1);
+    \coordinate[above right=of c0, xshift=4mm, label=right:{$\Xi_c^+,\,\Lambda$}] (p);
+    \coordinate[      right=of c0, xshift=4mm, label=right:{$K^-$}] (K);
+    \coordinate[below right=of c0, xshift=4mm, label=right:{$\pi^-$}] (pi);
+
+    \draw[] ($(c0)!0.5!(c1)$) arc(20:-24:0.5) node[yshift=2mm, xshift=5mm] {\scriptsize$L$-wave};
+
+    \draw[] ($(c1)!0.5!(p)$) arc(20:-10:0.9) node[yshift=3mm, xshift=5mm] {\scriptsize$l$-wave};
+
+    \draw[scalar]  (Lamc) -- node[below] {$\Omega_b^-,\,\Lambda_0$} (c0);
+    \draw[vector]  (c0) -- node[above] {$\Omega_c^{**}$} (c1);
+    \draw[scalar]  (c1) -- (p);
+    \draw[scalar]  (c1) -- (K);
+    \draw[scalar]  (c0) -- (pi);
+
+    \fill[green!40!black] (c0) circle (1mm);
+    \fill[blue!40!black] (c1) circle (1mm);
+  \end{tikzpicture}
+\end{document}

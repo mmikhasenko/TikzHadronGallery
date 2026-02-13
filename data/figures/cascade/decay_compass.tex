@@ -1,0 +1,28 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{newtxtext,newtxmath}
+
+\input{mytikzset}
+\definecolor{myGreen}{RGB}{0,127,0}
+
+\begin{document}
+\nopagecolor
+\begin{tikzpicture}[node distance=0.5cm and 0.7cm,baseline=0.cm]
+  \coordinate[] (b12);
+  \coordinate[right=of b12] (b2);
+  \coordinate[above right=of b2] (b13);
+  \coordinate[below right=of b13,label=right:$\pi$] (b3);
+  \coordinate[right=of b13,label=right:$\pi$] (b4);
+  \coordinate[right=of b2] (b25);
+  \coordinate[below right=of b25,label=right:$\pi$] (b5);
+  \draw[vector,very thick,blue]
+  (b12) --node[label={below}:{\scriptsize \color{blue}$R_{3\pi}$}] {} (b2);
+  \draw[scalar]  (b13) -- (b3);
+  \draw[vector,very thick,magenta]
+  (b2) -- node[label={above left, xshift=1mm, yshift=-1mm}:{\scriptsize $\xi$}] {} (b13);
+  \draw[scalar]  (b2) -- (b5);
+  \draw[scalar]  (b13) -- (b4);
+  \fill[black]  (b2) circle [radius=0.1];
+  \fill[black] (b13) circle [radius=0.1];
+\end{tikzpicture}
+\end{document}

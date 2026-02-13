@@ -1,0 +1,54 @@
+\documentclass[tikz]{standalone}
+
+% \usepackage{newtxtext,newtxmath}
+\usepackage{amsmath, amsfonts, amssymb}
+% \input{../notations.tex}
+
+
+\newcommand{\pb}{\ensuremath{p_\mathrm{b}}}
+\newcommand{\pt}{\ensuremath{p_\mathrm{t}}}
+\newcommand{\pr}{\ensuremath{p_\mathrm{r}}}
+\newcommand{\pX}{\ensuremath{p_\mathrm{X}}}
+\newcommand{\Po}{\ensuremath{\mathbb{P}}}
+
+\input{mytikzset}
+% \setbeamercolor{alerted text}{fg=red}
+
+\begin{document}
+\nopagecolor
+\begin{tikzpicture}[x=3mm,y=6mm]
+  \draw[thick] (-2,0.05) -- (0,0.05);
+  \draw[thick] (-2,0) -- (0,0);
+  \draw[thick] (-2,-0.05) -- (0,-0.05);
+  \draw (-2,0) node[anchor=east]{$a_1$};
+
+  % \alert{
+    \draw[thick,red] (0,0.05) -- (2,1.05);
+    \draw[thick,red] (0,0) -- (2,1);
+    \draw[red] (1,0.5) node[anchor=south east]{$K^*$};
+  % }
+  \draw[thick] (2,1.05) -- (8,2);
+
+  \draw[thick] (4,-0.5) -- (6,-0.5);
+  \draw[thick] (4,-0.55) -- (6,-0.55);
+  \draw (5,-0.5) node[anchor=north]{$f_0$};
+
+  % \alert{
+    \draw[thick,red] (2,1) -- (4,-0.5);
+    \draw[thick,red] (0,-0.05) -- (4,-0.55);
+  % }
+  \draw[thick] (6,-0.5) -- (8,0.5);
+  \draw[thick] (6,-0.55) -- (8,-1.5);
+  % \alert{
+  %   \draw[thick] (3,2) -- (3, -2);
+  % }
+
+  % \alert{
+    \draw[red] (3,0) node[anchor=south west]{$K$};
+    \draw[red] (2,-0.5) node[anchor=north]{$\bar K$};
+  % }
+  \draw (8,2) node[anchor=west]{$\pi$};
+  \draw (8,0.5) node[anchor=west]{$\pi$};
+  \draw (8,-1.5) node[anchor=west]{$\pi$};
+\end{tikzpicture}
+\end{document}

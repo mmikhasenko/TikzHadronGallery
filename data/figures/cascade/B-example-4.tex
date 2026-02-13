@@ -1,0 +1,16 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{newtxtext,newtxmath}
+
+\input{mytikzset}
+\usetikzlibrary{decorations.pathreplacing}
+
+\begin{document}
+\nopagecolor
+\begin{tikzpicture}[baseline=0.cm]
+  \draw[scalar] (0,0) -- node [label=above:{$J,M$}] {} (1,0);
+  \draw[scalar] (1,0) -- node [label=right:{$j_1,\lambda_1$}] {} (2,0.6);
+  \draw[scalar] (1,0) -- node [label=below:{$j_2,\lambda_2$}] {} (2,-0.6);
+  \fill[black]  (1,0) circle [radius=0.1];
+\end{tikzpicture}
+\end{document}

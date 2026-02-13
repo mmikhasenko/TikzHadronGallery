@@ -1,0 +1,40 @@
+\documentclass[tikz]{standalone}
+
+% \usepackage{newtxtext,newtxmath}
+\usepackage{amsmath, amsfonts, amssymb}
+% \input{../notations.tex}
+
+
+\newcommand{\pb}{\ensuremath{p_\mathrm{b}}}
+\newcommand{\pt}{\ensuremath{p_\mathrm{t}}}
+\newcommand{\pr}{\ensuremath{p_\mathrm{r}}}
+\newcommand{\pX}{\ensuremath{p_\mathrm{X}}}
+\newcommand{\Po}{\ensuremath{\mathbb{P}}}
+
+\input{mytikzset}
+
+\begin{document}
+\nopagecolor
+\begin{tikzpicture}[x=6mm,y=6mm]
+  \draw[thick] (0,0) -- (4,0);
+  \draw (0,0) node[anchor=east]{$\pi^-$};
+  \draw (3,0) node[anchor=south]{$X (J^{PC})$};
+  \draw[thick] (2,0) -- (2,-2);
+  \draw (2,-1) node[anchor=east]{$\mathrm{I\!P}$};
+  \draw (2.5,-1) node[anchor=west]{$t'$};
+  \draw[->] (2.5, -0.7) -- (2.5, -1.4);
+  \draw[thick] (2.1,0) -- (2.1,-2);
+  \draw[thick] (0,-2.5) -- (2,-2) -- (7,-3);
+  \draw (0,-2.5) node[anchor=east]{$p$};
+  \draw (7,-3) node[anchor=west]{$p$};
+  \draw[thick] (6,-1) -- (4,0) -- (7,1);
+  \draw[thick,fill=white] (4,0) circle(0.5);
+  \draw (5.2,-.05) node{$L$};
+  \draw (5.4,-.6) arc(-55:55:.6);
+  \draw[thick] (7,-0.5) -- (6,-1) -- (7,-1.5);
+  \draw (7,1) node[anchor=west]{$\pi^-$};
+  \draw (5,-0.5) node[anchor=north]{$\xi$};
+  \draw (7,-0.5) node[anchor=west]{$\pi^-$};
+  \draw (7,-1.5) node[anchor=west]{$\pi^+$};
+\end{tikzpicture}
+\end{document}

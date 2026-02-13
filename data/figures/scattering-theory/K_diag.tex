@@ -1,0 +1,65 @@
+\ensuremath{
+\begin{tikzpicture}[baseline=0cm,scale=\scl]
+  \var
+%
+  \draw[]  (0,{ \yt}) -- (2.0,{ \yt});
+  \draw[double] (0,{-\yt}) -- (2.0,{-\yt});
+  \draw[fill=white] (\xm,0) ellipse ({1.4*\xm} and {1.6*\Rad});
+  \node[] () at ({\xm},0) {K};
+\end{tikzpicture}  =
+\begin{tikzpicture}[baseline=0cm,scale=\scl]
+    \var
+    \draw[double] (0,0) -- (2.0,{ \yt});
+    \draw[] (0,0) -- (2.0,{-\yt});
+    \draw[fill=black] (0,0) ellipse (0.2);
+    %
+\end{tikzpicture} +
+\begin{tikzpicture}[baseline=0cm,scale=\scl]
+    \var
+    \draw[] (0,0) -- (3.0,{ \yt});
+    \draw[double] (0,0) -- (2.0,{-\yt});
+    \draw[fill=black] (0,0) ellipse (0.2);
+  %
+    \draw[] (2.0,{-\yt}) -- (3.0,{ \yt});
+    \draw[double] (3.0,{ \yt}) -- (3.5,{\yt});
+    \draw[] (2.0,{-\yt}) -- (3.5,{-\yt});
+  %
+  \draw[fill=white] (2.0,-\yt) ellipse (0.2);
+  \draw[fill=white] (3.0,\yt) ellipse (0.2);
+\end{tikzpicture} +
+\dots+
+\begin{tikzpicture}[baseline=0cm,scale=\scl]
+  \var
+%
+  \draw[]  (0,0) -- (3.0,{ \yt});
+  \draw[double] (0,0) -- (2.0,{-\yt});
+  \draw[fill=black] (0,0) ellipse (0.2);
+%
+  \draw[] (2.0,{-\yt}) -- (3.0,{ \yt});
+  \draw[] (3.0,{ \yt}) -- (4.0,{-\yt});
+  \draw[] (2.0,{-\yt}) -- (4.0,{-\yt});
+%
+\draw[dotted] (3.0,{\yt}) -- (5.0,{\yt});
+\draw[dotted] (4.0,{-\yt}) -- (5.0,{\yt});
+  \draw[dotted] (4.0,{-\yt}) -- (6.0,{-\yt});
+  % \draw[] (6.0,{-\yt}) -- (7.0,{-\yt});
+  \draw[] (5.0,{ \yt}) -- (6.0,{-\yt});
+  \draw[] (5.0,{ \yt}) -- (7.0,{ \yt});
+  \draw[] (6.0,{-\yt}) -- (7.0,{\yt});
+  \draw[] (6.0,{-\yt}) -- (8.0,{-\yt});
+  \draw[] (7.0,{ \yt}) -- (8.0,{-\yt});
+  \draw[] (7.0,{ \yt}) -- (9.0,{ \yt});
+  \draw[double] (8.0,{-\yt}) -- (9.0,{-\yt});
+%
+  \draw[fill=white] (2.0,-\yt) ellipse (0.2);
+  \draw[fill=white] (3.0,\yt) ellipse (0.2);
+  \draw[fill=white] (4.0,-\yt) ellipse (0.2);
+  \draw[fill=white] (5.0,\yt) ellipse (0.2);
+  \draw[fill=white] (6.0,-\yt) ellipse (0.2);
+  \draw[fill=white] (7.0,\yt) ellipse (0.2);
+  \draw[fill=white] (8.0,-\yt) ellipse (0.2);
+\end{tikzpicture}+
+\dots
+% \equiv
+% \Ksum
+}

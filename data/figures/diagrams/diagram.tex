@@ -1,0 +1,101 @@
+\documentclass{article}
+%%%%
+% author : Julian Garcia Pardinas
+% date   : 2018-11-28
+%%%%
+\usepackage{tikz}
+%%%<
+\usepackage{verbatim}
+\usepackage{ifthen}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{5pt}%
+%%%>
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows,automata}
+\usetikzlibrary{arrows.meta}
+
+\newboolean{uprightparticles}
+\setboolean{uprightparticles}{false} %True for upright particle symbols
+\input{../lhcb-symbols-def} % Add in the predefined LHCb symbols
+
+\definecolor{dark_green}{RGB}{10, 142, 10}
+
+\newcommand{\yslantA}{0.}
+\newcommand{\xslantA}{0.8}
+\newcommand{\yslantB}{0.}
+\newcommand{\xslantB}{0.3}
+\newcommand{\xshift}{124.5}
+\begin{document}
+\begin{tikzpicture}[scale=1.1,every node/.style={minimum size=0cm},on grid]
+
+	% Real level
+	\begin{scope}[
+		xshift=-\xshift,
+		every node/.append style={yslant=\yslantA,xslant=\xslantA},
+		yslant=\yslantA,xslant=\xslantA
+	] 
+		% The frame:
+		\draw[black] (0,1.5) rectangle (7,5.5); 
+	\end{scope}
+	
+	% Monetary level
+	\begin{scope}[
+		xshift=\xshift,
+		every node/.append style={yslant=\yslantB,xslant=\xslantB},
+		yslant=\yslantB,xslant=\xslantB
+	]
+		% The frame:
+		\fill[white,fill opacity=.75] (0,0) rectangle (7,7); % Opacity
+		\draw[black] (0,0) rectangle (7,7); 
+	\end{scope} 
+	
+	\draw[dashed] (-1.5,3.5) -- (12.4,3.5);
+	
+	\node (A) at (5.4, 3.5) {}; % Bs
+	\node (B) at (2., 3.5) {}; % P1
+	\node (C) at (9., 3.5) {}; % P2
+	\node (D) at (5.95, 5.25) {};
+	\node (E) at (6.25, 4.5) {};
+	\node (F) at (0.9, 4.9) {}; % K+
+	\node (G) at (3.1, 2.1) {}; % pi-
+	\node (H) at (11.1, 5.8) {}; % K-
+	\node (I) at (6.9, 1.2) {}; % pi+
+
+	\node (J) at (0.35, 3.5) {};
+	\node (K) at (1.45, 4.2) {};
+	\node (L) at (10.7, 3.5) {};
+	\node (M) at (10.1, 4.65) {};
+
+	\draw[-{>[scale=2.5,length=5,width=3]},line width=2pt] (A) to (B);
+	\draw[-{>[scale=2.5,length=5,width=3]},line width=2pt] (A) to (C);
+	\draw[-{>[scale=2.5,length=5,width=3]},line width=1pt] (B) to (F);
+	\draw[-{>[scale=2.5,length=5,width=3]},line width=1pt] (B) to (G);
+	\draw[-{>[scale=2.5,length=5,width=3]},line width=1pt] (C) to (H);
+	\draw[-{>[scale=2.5,length=5,width=3]},line width=1pt] (C) to (I);
+	
+	\draw[-{>[scale=2.5,length=2,width=2]},line width=1pt,bend right,color=dark_green] (E) to (D);
+	\draw[-{>[scale=2.5,length=2,width=2]},line width=1pt,bend left,color=dark_green] (J) to (K);
+	\draw[-{>[scale=2.5,length=2,width=2]},line width=1pt,bend right,color=dark_green] (L) to (M);
+			
+	\shade[shading=ball, ball color=red]  (A) circle (.4);
+	\draw[color=black,fill=white,line width=1] (B) circle (.2);
+	\draw[color=black,fill=white,line width=1] (C) circle (.2);
+	\shade[shading=ball, ball color=blue]  (F) circle (.2);
+	\shade[shading=ball, ball color=blue]  (G) circle (.2);
+	\shade[shading=ball, ball color=blue]  (H) circle (.2);
+	\shade[shading=ball, ball color=blue]  (I) circle (.2);
+	
+	\Huge
+	
+	\node (N) at (6., 2.5) {\Bs};
+	\node (O) at (2.2, 4.9) {\Kp};
+	\node (P) at (1.9, 2.15) {\pip};
+	\node (Q) at (9.9, 5.8) {\Km};
+	\node (R) at (8.2, 1.3) {\pip};
+	\node (S) at (0.2, 4.45) {\textcolor{dark_green}{$\theta_1$}};
+	\node (T) at (11.2, 4.35) {\textcolor{dark_green}{$\theta_2$}};
+	\node (U) at (6.5, 5.3) {\textcolor{dark_green}{$\varphi$}};
+	
+\end{tikzpicture}
+\end{document}

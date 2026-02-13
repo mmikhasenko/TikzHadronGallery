@@ -1,0 +1,27 @@
+\documentclass[tikz]{standalone}
+
+% \usepackage{newtxtext,newtxmath}
+
+\input{mytikzset}
+\definecolor{myGreen}{RGB}{0,127,0}
+
+\begin{document}
+\nopagecolor
+  \begin{tikzpicture}[node distance=0.9cm and 1.3cm, baseline=1cm]
+    \coordinate[] (c0);
+    \coordinate[{left}=of c0,label= left:{$\Omega_b^-,\,\Lambda_0$}] (Lamc);
+    \coordinate[above right=of c0, xshift=-4mm, yshift=-6mm] (c1);
+    \coordinate[above right=of c0, xshift=4mm, label=right:{$\Xi_c^+,\,\Lambda$}] (p);
+    \coordinate[      right=of c0, xshift=4mm, label=right:{$K^-$}] (K);
+    \coordinate[below right=of c0, xshift=4mm, label=right:{$\pi^-$}] (pi);
+
+    \draw[scalar]  (Lamc) --  (c0);
+    \draw[vector]  (c0) -- node[above] {$\Omega_c^{**}$} (c1);
+    \draw[scalar]  (c1) -- (p);
+    \draw[scalar]  (c1) -- (K);
+    \draw[scalar]  (c0) -- (pi);
+
+    \fill[black] (c0) circle (1mm);
+    \fill[black] (c1) circle (1mm);
+  \end{tikzpicture}
+\end{document}

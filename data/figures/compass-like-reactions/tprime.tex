@@ -1,0 +1,40 @@
+\documentclass[tikz]{standalone}
+
+%\usepackage{newtxtext,newtxmath}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows,shapes}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+
+\tikzset{
+  scalar/.style={thick,draw=black, postaction={decorate},
+    decoration={markings,mark=at position .6 with {\arrow[black,scale=0.5]{triangle 45}}}}%,
+}
+
+\begin{document}
+\nopagecolor
+\begin{tikzpicture}[node distance=0.6cm and 0.9cm]
+  \coordinate[label=left:$p_{\text{target}}$] (a1);
+  \coordinate[right=of a1, xshift=-2mm] (a2);
+  \coordinate[right=of a2,label=right:$p_{\text{recoil}}$] (a3);
+  \coordinate[above=of a2] (z2);
+  \coordinate[above=of z2] (b2);
+  \coordinate[left=of b2, xshift=-1mm] (b1);
+  \coordinate[      right=of b2,xshift=2mm] (b3);
+  \coordinate[above right=of b2,xshift=2mm,yshift=-2mm] (b4);
+  \coordinate[below right=of b2,xshift=2mm,yshift=2mm] (b5);
+
+  \draw[scalar]  (a1) -- (a2);
+  \draw[scalar]  (a2) -- (a3);
+  \draw[scalar]  (b2) -- node[label=left:{$t' = |t-t_{\text{min}}|$}] {} (a2);
+  \draw[scalar]  (b1) -- (b2);
+  \draw[scalar]  (b2) -- (b3);
+  \draw[scalar]  (b2) -- (b5);
+  \draw[scalar]  (b2) -- (b4);
+
+  \draw[fill=white] (b2) circle [radius=0.3];
+  % \fill[red] (b2) circle [radius=0.15];
+  \fill[black] (a2) circle [radius=0.05];
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,34 @@
+\documentclass[tikz]{standalone}
+
+% \usepackage{newtxtext,newtxmath}
+
+\input{mytikzset}
+\definecolor{myGreen}{RGB}{0,127,0}
+
+\begin{document}
+\nopagecolor
+  \begin{tikzpicture}[node distance=0.9cm and 1.3cm, baseline=1cm]
+    \coordinate[] (c0);
+    \coordinate[left=of c0,label= left:{$\Xi_b^-$}] (Lamc);
+    \coordinate[above right=of c0, xshift=6mm] (p);
+    \coordinate[below right=of c0, xshift=4mm, label=right:{$\pi^-$}] (pi);
+    \coordinate[      right=of c0, xshift=4mm, label=right:{$K^-$}] (K);
+
+    \draw[scalar]  (Lamc) --  (c0);
+    \draw[scalar]  (c0) -- node[above left] {$\Lambda_c^+$} (p);
+    \draw[scalar]  (c0) -- (pi);
+    \draw[scalar]  (c0) -- (K);
+
+    \draw[black, fill=white] (c0) circle (2.5ex) node[] {};
+
+    \coordinate[above right=of p, xshift=4mm, label=right:{$p$}] (p1);
+    \coordinate[below right=of p, xshift=4mm, label=right:{$\pi^+$}] (pi1);
+    \coordinate[      right=of p, xshift=4mm, label=right:{$K^-$}] (K1);
+
+    \draw[scalar]  (p) -- (p1);
+    \draw[scalar]  (p) -- (pi1);
+    \draw[scalar]  (p) -- (K1);
+
+    \draw[black, fill=white] (p) circle (2.5ex) node[] {};
+  \end{tikzpicture}
+\end{document}

@@ -1,0 +1,40 @@
+\newcommand{\baryon}[4]{
+\scalebox{0.8}{
+\begin{tikzpicture}[node distance=0.7cm and 1.0cm, baseline=-1cm]
+  \node[coordinate] (a) at (-1,0) {};
+  \filldraw[even odd rule,inner color=cola,outer color=white] (a) circle (1cm);
+  \draw[black,thick] (a) circle (1cm);
+  \draw[black] (a) ++(0.3,0.3) circle (3mm) node[] {#3};
+  \draw[black] (a) ++(-0.4,0.1) circle (3mm) node[] {#2};
+  \filldraw[even odd rule,inner color=quark,outer color=white] (a) ++(0,-0.5) circle (3mm);
+  \draw[black, thick] (a) ++(0,-0.5) circle (3mm) node[] {#1};
+  \draw[black] (a) ++(-1,-1) node[] {#4};
+\end{tikzpicture}
+}}
+
+\newcommand{\meson}[3]{
+\scalebox{0.8}{
+\begin{tikzpicture}[node distance=0.7cm and 1.0cm, baseline=-1cm]
+  \node[coordinate] (a) at (-1,0) {};
+  \filldraw[even odd rule,inner color=colb,outer color=white] (a) circle (1cm);
+  \draw[black,thick] (a) circle (1cm);
+  \draw[black] (a) ++(0.24,0.3) circle (3mm) node[] {#2};
+  \filldraw[even odd rule,inner color=quark,outer color=white] (a) ++(-0.24,-0.4) circle (3mm);
+  \draw[black, thick] (a) ++(-0.24,-0.4) circle (3mm) node[] {#1};
+  \draw[black] (a) ++(-1,-1) node[] {#3};
+\end{tikzpicture}
+}}
+
+\newcommand{\quarkonia}[3]{
+\scalebox{0.8}{
+\begin{tikzpicture}[node distance=0.7cm and 1.0cm, baseline=-1cm]
+  \node[coordinate] (a) at (-1,0) {};
+  \filldraw[even odd rule,inner color=colb,outer color=white] (a) circle (1cm);
+  \draw[black,thick] (a) circle (1cm);
+  \filldraw[even odd rule,inner color=quark,outer color=white] (a) ++(0.24,0.3) circle (3mm);
+  \draw[black, thick] (a) ++(0.24,0.3) circle (3mm) node[] {#2};
+  \filldraw[even odd rule,inner color=quark,outer color=white] (a) ++(-0.24,-0.4) circle (3mm);
+  \draw[black, thick] (a) ++(-0.24,-0.4) circle (3mm) node[] {#1};
+  \draw[black] (a) ++(-1,-1) node[] {#3};
+\end{tikzpicture}
+}}

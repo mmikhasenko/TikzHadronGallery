@@ -1,0 +1,19 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{newtxtext,newtxmath}
+
+\input{mytikzset}
+\usetikzlibrary{decorations.pathreplacing}
+
+\begin{document}
+\nopagecolor
+\begin{tikzpicture}[baseline=0.cm]
+  \draw[scalar] (0,0) -- (1,0);
+  \draw[scalar] (1,0) -- (2,0.6);
+  \draw[scalar] (1,0) -- (2,0);
+  \draw[scalar] (1,0) -- (2,-0.6);
+  \fill[black]  (1,0) circle [radius=0.1];
+  \draw [decorate,decoration={brace,mirror,amplitude=3},xshift=1mm,thick]
+  (2,-0.7) -- (2,0.1) node [black,midway,xshift=3mm] {X};
+\end{tikzpicture}
+\end{document}

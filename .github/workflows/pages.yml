@@ -23,7 +23,11 @@ jobs:
         with:
           node-version: 22
       - name: Install image tools
-        run: sudo apt-get update && sudo apt-get install -y poppler-utils imagemagick
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            poppler-utils imagemagick latexmk \
+            texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-pictures
       - run: npm install
       - run: npm run gallery:prepare
       - run: npm run build

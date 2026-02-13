@@ -1,0 +1,21 @@
+\documentclass[tikz]{standalone}
+\usepackage{amsfonts}
+
+% \usepackage{newtxtext,newtxmath}
+
+\input{mytikzset.tex}
+
+\newcommand{\Po}{\mathbb{P}}
+\begin{document}
+\nopagecolor
+\begin{tikzpicture}[x=1.5cm,y=1.5cm]
+
+\draw[<-, thick] (-0.05, 0)     --   (-1,0)    node[ left] {$\pi$ };
+\draw[<-, thick] ( 0.05, 0)     --   ( 1,0)    node[right] {$\Po$ };
+\draw[->, thick] ( 0.04, 0.015) -- ( 0.8, 0.3) node[right] {$\eta^{(\prime)}$};
+\draw[->, thick] (-0.04,-0.015) -- (-0.8,-0.3) node[left] {$\pi$};
+
+\draw[red] (0.3,0) arc (0:20:0.3) node[xshift=4mm] {\color{red} $\theta$};
+
+\end{tikzpicture}
+\end{document}

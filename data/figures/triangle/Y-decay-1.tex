@@ -1,0 +1,23 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{newtxtext,newtxmath}
+
+\input{mytikzset}
+\usetikzlibrary{decorations.pathreplacing}
+
+\begin{document}
+\nopagecolor
+\begin{tikzpicture}[baseline=0.cm]
+  \draw[scalar] (0,0) -- node [label=above:{$Y$}] {} (1,0);
+  \draw[vector] (1,0) -- node [label=above:{$D_1$}] {} (2,1);
+  \fill[black]  (1,0) circle [radius=0.1];
+  \draw[scalar] (1,0) -- node [label=below:{$\bar{D}$}] {} (2.5,-0.2);
+  \fill[black]  (2,1) circle [radius=0.1];
+  \draw[scalar] (2,1) -- node[label=above:{$\pi$}] {} (3,1);
+  \draw[scalar] (2,1) -- node [label=below:{$D^*$}] {} (2.8,0.3);
+  \draw [decorate,decoration={brace,mirror,amplitude=3},xshift=1mm,thick]
+  (2.8,-0.3) -- (2.8,0.4) node [black,midway,xshift=3mm] {s};
+  \draw [decorate,decoration={brace,amplitude=3},xshift=1mm,thick]
+  (3.1,1.05) -- (3.1,0.3) node [black,midway,xshift=3mm] {t};
+\end{tikzpicture}
+\end{document}

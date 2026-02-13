@@ -1,0 +1,24 @@
+\documentclass[tikz]{standalone}
+
+\input{mytikzset}
+\begin{document}
+  \begin{tikzpicture}[node distance=0.8cm and 1.2cm]
+    \coordinate[label=left:{$q_2$}] (a1);
+    \coordinate[right=of a1] (a2); \coordinate[above right=of a2]
+    (b1); \coordinate[below right=of a2] (b2); \coordinate[right=of
+    b1,label=right:$q_3$] (c1); \coordinate[right=of
+    b2,label=right:$q_1$] (c2);
+
+    \draw[scalar] (a2) -- (a1);
+    \draw[scalar, line width=1mm] (a2) -- node[xshift=2mm, yshift=-3mm] {$k_1$} (b1);
+    \draw[] (a2) -- node[above,sloped] {$\mathrm{resonance}$} (b1);
+    \draw[scalar] (b2) -- node[label={below left,xshift=4mm}:$k_3$ ] {} (a2);
+    \draw[scalar] (b1) -- node[label=right:$k_2$ ] {} (b2);
+    \draw[scalar] (b1) -- (c1);
+    \draw[scalar] (b2) -- (c2);
+
+    \fill[black] (a2) circle (1mm);
+    \fill[black] (b1) circle (1mm);
+    \fill[black] (b2) circle (1mm);
+  \end{tikzpicture}
+\end{document}

@@ -1,0 +1,22 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{newtxtext,newtxmath}
+
+\input{mytikzset}
+\usetikzlibrary{decorations.pathreplacing}
+
+\begin{document}
+\nopagecolor
+\begin{tikzpicture}[x=1cm,y=1cm]
+      \draw[thick, ->] (-1.2+0.1,0) -- node[label={above,yshift=-2mm}:{$e^+$}] {} (0,0);
+      \draw[thick, ->] ( 1.2+0.1,0) -- node[label={below,yshift=2mm}:{$e^-$}] {} (0,0);
+      \draw[thick, ->] (0,0) -- node[label={above,yshift=-2mm}:{$\tau^+$}] {} ++(30:1);
+      \draw[thick, ->] (0,0) -- node[label={below,yshift=2mm}:{$\tau^-$}] {} ++({180+30}:1);
+      \draw[thick, ->] (30:1) -- ++(100:0.8) node[right] {$\nu_\tau$};
+      \draw[vector   ] (30:1) -- node[coordinate, label=above:{$W^+$}] {} ++(20:1) node[] (a1) {};
+      \draw[thick, ->] (a1) -- ++( 15:1) node[right] {$\pi^+$};
+      \draw[thick, ->] (a1) -- ++(-15:1) node[right] {$\pi^-$};
+      \draw[thick, ->] (a1) -- ++(  0:1) node[right] {$\pi^+$};
+      \draw[draw, fill=white] (a1) circle (2.5mm) node[] {\scriptsize$1^{++}$};
+\end{tikzpicture}
+\end{document}

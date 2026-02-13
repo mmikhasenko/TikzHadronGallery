@@ -1,0 +1,47 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{xcolor}
+\definecolor{colortwo}{RGB}{230, 159,   0} % orange
+\definecolor{colorthree}{RGB}{ 86, 180, 233} % sky blue
+\definecolor{colorfour}{RGB}{  0, 158, 115} % blueish green
+\definecolor{colorfive}{RGB}{240, 228,  66} % yellow
+\definecolor{colorsix}{RGB}{  0, 114, 178} % blue
+\definecolor{colorseven}{RGB}{213,  94,   0} % vermillion
+\definecolor{coloreight}{RGB}{204, 121, 167} % reddish purple
+
+\newcommand\FF{\ensuremath{\mathrm{FF}}\,}
+
+\input{mytikzset}
+
+\begin{document}
+\nopagecolor
+\begin{tikzpicture}[node distance=0.8cm and 1.2cm]
+  \coordinate[] (z1);
+  \coordinate[below =of z1] (a2);
+  \coordinate[left=of a2, label=left:{$\mathrm{I\!P}$}] (a1);
+  \coordinate[above =of z1] (z2);
+  \coordinate[above=of z2] (b2);
+  \coordinate[left=of b2, label=left:{$\pi^{-}$}] (b1);
+  % \coordinate[right=of b2] (b2);
+  \coordinate[      right=of b2,xshift=2mm,label=right:{$\xi$}] (b3);
+  \coordinate[right=of z1,xshift=2mm,label=right:{$\pi_1^-$}] (b5);
+
+  \draw[gluon]  (a1) -- node[] (a1z3) {} (z1);
+  % \draw[]  (a1z3) to[out=-45, in=225, edge node={node[label={below, yshift=2mm}:{$t$}] {}}] (z3a3);
+  % \draw[scalar]  (z1) to[out=135, in=225, edge node={node [label=left:{$\pi^+$}] {}}]  (b2);
+  \draw[scalar]  (z1) -- node [label=left:{$\pi^+$}] {} (b2);
+  \draw[gluon, colorthree]  (z1) -- node[right, black] {$\quad\longleftarrow\,\frac{{\color{colorthree}\FF(t_1)}}{m_\pi^2-t_1}$} (b2);
+  \draw[scalar]  (b1) -- (b2);
+  \draw[vector]  (b2) -- (b3);
+  \draw[scalar]  (z1) -- (b5);
+  \node[circle,draw=black,fill=colorfour,inner sep=0pt,minimum size=2mm] at (b2) {};
+  \node[above, colorfour] at (b2) {$d_{0\lambda}^S(\psi(s,\sigma_1,t_1))$};
+  \node[circle,draw=black,fill=colortwo, inner sep=0pt,minimum size=2mm] at (z1) {}
+    node[below right,yshift=-2mm, colortwo] {$T_{p\pi}^{M}(t,s,t_1)$};
+  % \draw [decorate,decoration={brace,amplitude=3pt}] ($(b4)+(1.2,0.1)$) -- ($(b3)+(1.2,-0.1)$) node [black,midway,xshift=0.4cm] {$\sigma_1$};
+  % \draw [decorate,decoration={brace,amplitude=3pt}] ($(b5)+(1.2,0.1)$) -- ($(a3)+(1.4,-0.1)$) node [black,midway,xshift=0.5cm] {$s_{p\pi_1}$};
+  % \draw [decorate,decoration={brace,amplitude=3pt}] ($(a1)-(1.2,0.1)$) -- ($(b1)-(1.2,-0.1)$) node [black,midway,xshift=-0.4cm] {$s_0$};
+  % \draw[thin,<-] ($(z1)+(-0.0,0.35)$) -- node[label={right,xshift=-1mm}:{$t_1$}] {} ($(b2)+(-0.0,-0.35)$);
+
+\end{tikzpicture}
+\end{document}

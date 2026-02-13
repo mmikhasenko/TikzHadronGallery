@@ -1,0 +1,29 @@
+\documentclass[tikz]{standalone}
+
+% \usepackage{newtxtext,newtxmath}
+\usetikzlibrary{decorations.pathreplacing}
+\input{mytikzset}
+
+\begin{document}
+\nopagecolor
+  \begin{tikzpicture}[node distance=0.9cm and 1.3cm, baseline=1cm]
+    \coordinate[] (c0);
+    \coordinate[left=of c0,label= left:{$B,\Lambda_b,\Xi_b$}] (Lamc);
+    \coordinate[above right=of c0, xshift=4mm, label=right:{$J/\psi,\psi$}] (p);
+    \coordinate[      right=of c0, xshift=4mm, label=right:{$\pi,p,\Lambda;\phi$}] (pi);
+    \coordinate[below right=of c0, xshift=4mm, label=right:{$K$}] (K);
+
+    \draw[scalar]  (Lamc) -- (c0);
+    \draw[scalar]  (c0)   -- (p);
+    \draw[scalar]  (c0)   -- (pi);
+    \draw[scalar]  (c0)   -- (K);
+
+    \draw[black, fill=white] (c0) circle (2.9ex) node[scale=1.2] {$A$};
+
+    \draw [decorate,decoration={brace,amplitude=3pt}] ($(p)+(1.5,0.1)$) -- ($(pi)+(1.5,-0.1)$) node [black,midway,xshift=0.7cm] {exotics};
+    \draw [decorate,decoration={brace,amplitude=3pt}] ($(pi)+(1.7,0.1)$) -- ($(K)+(1.7,-0.1)$) node [black,midway,xshift=1.2cm] {{$K^*,\Lambda^*,\Xi^*,\phi^*$}};
+    % \draw [decorate,decoration={brace,amplitude=3pt}] ($(b4)+(2.0,0.1)$) -- ($(b5)+(2.0,-0.1)$) node [black,midway,xshift=0.4cm] {$s$};
+    % \draw [decorate,decoration={brace,amplitude=3pt}] ($(a1)-(1.5,0.1)$) -- ($(b1)-(1.2,-0.1)$) node [black,midway,xshift=-0.4cm] {$s_0$};
+
+  \end{tikzpicture}
+\end{document}

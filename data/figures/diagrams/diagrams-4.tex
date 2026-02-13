@@ -1,0 +1,40 @@
+
+\newcommand{\cascadeUp}[2]{
+\begin{tikzpicture}[node distance=0.4cm and 0.5cm, baseline=0cm]
+  \coordinate[] (b2);
+  \coordinate[left=of b2] (b1);
+  \coordinate[above right=of b2] (b4);
+  \coordinate[below right=of b2,xshift=2mm,label=right:$\pi^-$] (b5);
+  \coordinate[right=of b4,label=right:$\pi^{-}$] (c1);
+  \coordinate[below right=of b4,label=right:$\pi^{+}$] (c2);
+
+  \draw[vector]  (b1) -- node[label={above, yshift=-1mm}:{#1}] {} (b2);
+  \draw[scalar]  (b2) -- (b5);
+  \draw[vector]  (b2) -- node[label={above, yshift=-1mm, xshift=-1mm}:{ #2}] {} (b4);
+  \draw[scalar]  (b4) -- (c1);
+  \draw[scalar]  (b4) -- (c2);
+
+  \fill[black] (b2) circle [radius=0.05];
+  \fill[black] (b4) circle [radius=0.05];
+\end{tikzpicture}
+}
+
+\newcommand{\cascadeDn}[2]{
+\begin{tikzpicture}[node distance=0.4cm and 0.5cm, baseline=0cm]
+  \coordinate[] (b2);
+  \coordinate[left=of b2] (b1);
+  \coordinate[below right=of b2] (b4);
+  \coordinate[above right=of b2,xshift=2mm,label=right:$\pi^-$] (b5);
+  \coordinate[right=of b4,label=right:$\pi^{-}$] (c1);
+  \coordinate[above right=of b4,label=right:$\pi^{+}$] (c2);
+
+  \draw[vector]  (b1) -- node[label={above, yshift=-1mm}:{ #1}] {} (b2);
+  \draw[scalar]  (b2) -- (b5);
+  \draw[vector]  (b2) -- node[label={below, yshift=-1mm, xshift=-1mm}:{ #2}] {} (b4);
+  \draw[scalar]  (b4) -- (c1);
+  \draw[scalar]  (b4) -- (c2);
+
+  \fill[black] (b2) circle [radius=0.05];
+  \fill[black] (b4) circle [radius=0.05];
+\end{tikzpicture}
+}

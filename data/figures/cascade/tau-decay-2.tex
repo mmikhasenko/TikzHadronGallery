@@ -1,0 +1,25 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{newtxtext,newtxmath}
+
+\input{mytikzset}
+\usetikzlibrary{decorations.pathreplacing}
+
+\begin{document}
+\nopagecolor
+\begin{tikzpicture}[baseline=0.cm]
+  \draw[scalar] (0,0.9) -- node [label=below:{$\tau^-$}] {} (1,0);
+  \draw[vector] (1,0) -- node [label=right:{$W^-$}] {} (1.5,1);
+  \fill[black]  (1,0) circle [radius=0.1];
+  \draw[scalar] (1,0) -- node [label=below:{$\nu$}] {} (1.5,-1.);
+  %\fill[black]  (2,1) circle [radius=0.1];
+  \coordinate[label=above:{$\pi^-$}] (A1) at (2.1,2.0);
+  \coordinate[label=above:{$\pi^+$}] (A2) at (2.5,2.0);
+  \coordinate[label=above:{$\pi^-$}] (A3) at (2.9,2.0);
+  \draw[scalar] (1.5,1) -- (A1);
+  \draw[scalar] (1.5,1) -- (A2);
+  \draw[scalar] (1.5,1) -- (A3);
+  % \node[] () at (3.15,1) {$\pi^+$};
+  \node[circle,draw,inner sep=0pt,minimum size=15pt, fill=white] () at (1.5,1) {\small $1^{++}$};
+\end{tikzpicture}
+\end{document}

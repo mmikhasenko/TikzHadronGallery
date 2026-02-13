@@ -1,0 +1,30 @@
+\documentclass[tikz]{standalone}
+
+% \usepackage{newtxtext,newtxmath}
+\usepackage{amsmath, amsfonts, amssymb}
+% \input{../notations.tex}
+
+
+\newcommand{\pb}{\ensuremath{p_\mathrm{b}}}
+\newcommand{\pt}{\ensuremath{p_\mathrm{t}}}
+\newcommand{\pr}{\ensuremath{p_\mathrm{r}}}
+\newcommand{\pX}{\ensuremath{p_\mathrm{X}}}
+\newcommand{\Po}{\ensuremath{\mathbb{P}}}
+
+\input{mytikzset}
+
+\begin{document}
+\nopagecolor
+\begin{tikzpicture}[x=4mm,y=6mm]
+  \draw[thick] (-2,0.05) -- (0,0.05) -- (4,1.5);
+  \draw[thick] (-2,0) -- (0,0) -- (2,-1) -- (4,0);
+  \draw[thick] (-2,-0.05) -- (0,-0.05) -- (2,-1.05) -- (4,-2);
+  \draw (-2,0) node[anchor=east]{$a_1$};
+  \draw[fill, red] (0,0) circle(5pt);
+  \draw (1.5,-0.5) node[anchor=north east]{$f_0$};
+  \draw (4,1.5) node[anchor=west]{$\pi$};
+  \draw (4,0) node[anchor=west]{$\pi$};
+  \draw (4,-2) node[anchor=west]{$\pi$};
+  % \draw (6.5,0) node{\Large $=$};
+\end{tikzpicture}
+\end{document}

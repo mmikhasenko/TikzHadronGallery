@@ -30,5 +30,20 @@
       "regex": "(decay|collision)",
       "class": "Decay and Collision"
     }
+  ],
+  "generic_folder_names": [
+    "inline-figs",
+    "in-line-figures",
+    "tikz",
+    "tikz-figs",
+    "figs",
+    "figures",
+    "images",
+    "paper",
+    "slides",
+    "main",
+    "backup",
+    "review",
+    "examples"
   ]
 }

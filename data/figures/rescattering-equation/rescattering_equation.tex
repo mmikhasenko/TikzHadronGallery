@@ -1,0 +1,101 @@
+\newcommand{\rescatt}{
+$$
+\begin{tikzpicture}[node distance=0.4cm and 0.6cm, baseline=0cm]
+  \coordinate[] (a1);
+  \coordinate[right=of a1] (a2);
+  \coordinate[below right=of a2] (a3);
+  \coordinate[above right=of a2] (b3);
+  \coordinate[below right=of b3] (c1);
+  \coordinate[      right=of b3] (c2);
+  \draw[vector] (a1) -- (a2);
+  \draw[scalar] (a2) -- (a3);
+  \draw[red, line width=.1cm] (a2) -- (b3);
+  \draw[scalar] (b3) -- (c1);
+  \draw[scalar] (b3) -- (c2);
+  \fill[black] (a2) circle [radius=0.2];
+  \fill[black] (b3) circle [radius=0.1];
+\end{tikzpicture}
+=
+%\overbrace{
+  \begin{tikzpicture}[node distance=0.4cm and 0.6cm, baseline = 0cm]
+    \coordinate[] (a1);
+    \coordinate[right=of a1] (a2);
+    \coordinate[above right=of a2] (b1);
+    \coordinate[below right=of a2] (b2);
+    \coordinate[above right=of b1] (c1);
+    \coordinate[below right=of b1] (c2);
+    \draw[vector] (a1) -- (a2);
+    \draw[vector,black] (a2) -- (b1);
+    \draw[scalar] (a2) -- (b2);
+    \draw[scalar] (b1) -- (c1);
+    \draw[scalar] (b1) -- (c2);
+    \fill[black] (a2) circle [radius=0.2];
+    \fill[black] (b1) circle [radius=0.1];
+  \end{tikzpicture}
+%}^{\text{Isobar model}}
+\enspace
++
+\enspace
+%\overbrace{
+  \begin{tikzpicture}[node distance=0.4cm and 0.6cm, baseline = 0cm]
+    \coordinate[] (a1);
+    \coordinate[right=of a1] (a2);
+    \coordinate[above right=of a2] (b1);
+    \coordinate[below right=of a2] (b2);
+    \coordinate[above right=of b1] (c1);
+    \coordinate[right      =of b2] (c2);
+    \coordinate[above right=of c2] (d1);
+    \coordinate[below right=of c2] (d2);
+    \draw[vector] (a1) -- (a2);
+    \draw[vector,black] (a2) -- (b1);
+    \draw[scalar] (a2) -- (b2);
+    \draw[scalar] (b1) -- (b2);
+    \draw[scalar] (b1) -- (c1);
+    \draw[vector,black] (b2) -- (c2);
+    \draw[scalar] (c2) -- (d1);
+    \draw[scalar] (c2) -- (d2);
+    \fill[black] (a2) circle [radius=0.2];
+    \fill[black] (b1) circle [radius=0.1];
+    \fill[black] (b2) circle [radius=0.1];
+    \fill[black] (c2) circle [radius=0.1];
+  \end{tikzpicture}
+%}^{1^{\text{th}}\text{-rescattering}}
+\enspace
++
+\enspace
+%\overbrace{
+  \begin{tikzpicture}[node distance=0.4cm and 0.6cm, baseline = 0cm]
+    \coordinate[] (a1);
+    \coordinate[right=of a1] (a2);
+    \coordinate[above right=of a2] (b1);
+    \coordinate[below right=of a2] (b2);
+    \coordinate[right      =of b1] (c1);
+    \coordinate[right      =of b2] (c2);
+    \coordinate[right      =of c2] (d2);
+    \coordinate[right      =of c1] (d1);
+    \coordinate[above right=of d1] (f1);
+    \coordinate[below right=of d1] (f2);
+    \draw[vector] (a1) -- (a2);
+    \draw[vector,black] (a2) -- (b1);
+    \draw[scalar] (a2) -- (b2);
+    \draw[scalar] (b1) -- (b2);
+    \draw[scalar] (b1) -- (c1);
+    \draw[vector,black] (b2) -- (c2);
+    \draw[scalar] (c2) -- (c1);
+    \draw[scalar] (c2) -- (d2);
+    \draw[vector,black] (c1) -- (d1);
+    \draw[scalar] (d1) -- (f1);
+    \draw[scalar] (d1) -- (f2);
+    \fill[black] (a2) circle [radius=0.2];
+    \fill[black] (b1) circle [radius=0.1];
+    \fill[black] (b2) circle [radius=0.1];
+    \fill[black] (c2) circle [radius=0.1];
+    \fill[black] (c1) circle [radius=0.1];
+    \fill[black] (d1) circle [radius=0.1];
+  \end{tikzpicture}
+%}^{2^{\text{th}}\text{-rescattering}}
+\enspace
++
+\dots
+$$
+}

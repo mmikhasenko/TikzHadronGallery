@@ -6,6 +6,9 @@
   "scripts": {
     "audit": "node scripts/audit-figures.mjs",
     "gallery:prepare": "node scripts/audit-figures.mjs",
+    "gallery:seed": "node scripts/seed-from-talks.mjs",
+    "gallery:similarity": "node scripts/suggest-groups.mjs",
+    "gallery:clean": "node scripts/clean-generated.mjs",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview"

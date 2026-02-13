@@ -1,0 +1,51 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{newtxtext,newtxmath}
+\newcommand{\Po}{\ensuremath{\mathrm{I\!P}}}
+\newcommand{\pb}{\ensuremath{p_\text{b}}}
+\newcommand{\pt}{\ensuremath{p_\text{t}}}
+\newcommand{\pr}{\ensuremath{p_\text{r}}}
+\newcommand{\pX}{\ensuremath{p_\text{X}}}
+
+\input{mytikzset}
+
+\begin{document}
+\nopagecolor
+\begin{tikzpicture}[node distance=0.8cm and 1.2cm]
+  \coordinate[label=left:{$p,\,\pt$}] (a1);
+  \coordinate[right=of a1] (a2);
+  \coordinate[right=of a2, label=right:{$\pr,\,p'$}] (a3);
+  \coordinate[above =of a2] (z1);
+  \coordinate[above =of z1] (z2);
+  \coordinate[above=of z2] (b2);
+  \coordinate[left=of b2, label=left:{$\pb,\,\pi^{-}$}] (b1);
+  % \coordinate[right=of b2] (b2);
+  \coordinate[      right=of b2,xshift=2mm,label=right:{$\pi_3^-,\,p_3$}] (b3);
+  \coordinate[above right=of b2,xshift=2mm,label=right:{$\pi_2^+,\,p_2$}] (b4);
+  \coordinate[below right=of b2,xshift=2mm,label=right:{$\pi_1^-,\,p_1$}] (b5);
+ 
+  \draw[scalar]  (a1) -- node[] (a1z3) {} (z1);
+  \draw[scalar]  (z1) -- node[] (z3a3) {} (a3);
+  % \draw[scalar]  (b2) -- node[label=left:{$\mathbb{P}$}] {} (a2);
+  % \draw[thin,<-] ($(a2)+(0.2,0.2)$) -- node[label={right,xshift=-1mm}:{$t$}] {} ($(b2)+(0.2,-0.5)$);
+  \draw[]  (a1z3) to[out=-45, in=225, edge node={node[label={below, yshift=2mm}:{$t$}] {}}] (z3a3);
+  \draw[scalar]  (z1) to[out=135, in=225, edge node={node [label=left:{$\pi^+,\,p_{t_1}$}] {}}]  (b2);
+  % \draw[vector]  (a2) -- node[label=left:{$\Po$}] {} (z1);
+  \draw[scalar]  (b1) -- (b2);
+  % \draw[vector]  (b2) -- node[label=above:{$p_\xi, \xi$}] {} (b2);
+  \draw[scalar]  (b2) -- (b3);
+  \draw[scalar]  (b2) -- (b4);
+  \draw[scalar]  (z1) -- (b5);
+  % \fill[black] (b2) circle [radius=0.2];
+  % \fill[black] (z1) circle [radius=0.2];
+  \node[circle,draw=black,fill=white,inner sep=0pt,minimum size=6mm] at (b2) {};
+  \node[circle,draw=black,fill=white,inner sep=0pt,minimum size=6mm] at (z1) {};
+  % \fill[black] (b2) circle [radius=0.05];
+  % \fill[black] (a2) circle [radius=0.05];
+  \draw [decorate,decoration={brace,amplitude=3pt}] ($(b4)+(1.2,0.1)$) -- ($(b3)+(1.2,-0.1)$) node [black,midway,xshift=0.4cm] {$\sigma_1$};
+  \draw [decorate,decoration={brace,amplitude=3pt}] ($(b5)+(1.2,0.1)$) -- ($(a3)+(1.4,-0.1)$) node [black,midway,xshift=0.5cm] {$s_{p\pi_1}$};
+  \draw [decorate,decoration={brace,amplitude=3pt}] ($(a1)-(1.2,0.1)$) -- ($(b1)-(1.2,-0.1)$) node [black,midway,xshift=-0.4cm] {$s_0$};
+  \draw[thin,<-] ($(z1)+(-0.0,0.35)$) -- node[label={right,xshift=-1mm}:{$t_1$}] {} ($(b2)+(-0.0,-0.35)$);
+
+\end{tikzpicture}
+\end{document}

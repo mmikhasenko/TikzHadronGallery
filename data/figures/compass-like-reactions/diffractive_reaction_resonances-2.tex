@@ -1,0 +1,51 @@
+\documentclass[tikz]{standalone}
+
+% \usepackage{newtxtext,newtxmath}
+\usepackage{amsmath, amsfonts, amssymb}
+% \input{../notations.tex}
+
+
+\newcommand{\pb}{\ensuremath{p_\mathrm{b}}}
+\newcommand{\pt}{\ensuremath{p_\mathrm{t}}}
+\newcommand{\pr}{\ensuremath{p_\mathrm{r}}}
+\newcommand{\pX}{\ensuremath{p_\mathrm{X}}}
+\newcommand{\Po}{\ensuremath{\mathbb{P}}}
+
+\input{mytikzset}
+
+\begin{document}
+\nopagecolor
+\begin{tikzpicture}[node distance=0.8cm and 1.2cm]
+  \coordinate[label=left:{$p$}] (a1);
+  \coordinate[right=of a1, xshift=-2mm] (a2);
+  \coordinate[right=of a2,label=right:{$\pr$}] (a3);
+  \coordinate[above=of a2] (z2);
+  \coordinate[above=of z2,yshift=-4mm] (b2);
+  \coordinate[below=of z2,yshift=1mm] (z3);
+  \coordinate[left=of b2, xshift=-1mm, label=left:{$\pi^-$}] (b1);
+  \coordinate[right=of b2,xshift=-6mm] (d2);
+  % pions
+  \coordinate[above right=of b2,xshift=2mm,yshift=-2mm, label=right:{$\pi^-$}] (b4);
+  \coordinate[      right=of b2,xshift=2mm, label=right:{$\pi^+$}] (b3);
+  \coordinate[below right=of b2,xshift=2mm,yshift=2mm, label=right:{$\pi^-$}] (b5);
+
+  \draw[scalar]  (a1) -- node[] (a1z3) {} (z3);
+  \draw[scalar]  (z3) -- node[] (z3a3) {} (a3);
+  \draw[scalar]  (b1) -- (b2);
+  \draw[vector]  (b2) -- (d2);
+  % pions
+  \draw[scalar]  (d2) -- (b3);
+  \draw[scalar]  (d2) -- (b5);
+  \draw[scalar]  (d2) -- (b4);
+  \draw[gluon]   (z3) -- node[below left, xshift=-1mm] {$\Po$} (b2);
+
+  \draw [decorate,decoration={brace,amplitude=3pt}] ($(b4)+(1.2,0.1)$) -- ($(b5)+(1.2,-0.1)$) node [black,midway,xshift=0.3cm] {$s$};
+  \draw [decorate,decoration={brace,amplitude=3pt}] ($(b3)+(0.7,0.1)$) -- ($(b5)+(0.7,-0.1)$) node [black,midway,xshift=0.3cm] {$\sigma$};
+
+
+  \draw[black,fill=white] (b2) circle [radius=0.08];
+  \draw[black,fill=white] (d2) circle [radius=0.08];
+  \draw[black,fill=white] (z3) circle [radius=0.08];
+
+\end{tikzpicture}
+\end{document}
