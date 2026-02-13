@@ -1,6 +1,7 @@
 # TikZ Gallery
 
 Static gallery generated from real TikZ source files stored in this repository.
+This repository is a curated collection of my TikZ pictures, used primarily in talks and presentations.
 
 ## Source of Truth
 - `data/figures/<class-name>/*.tex`
@@ -69,7 +70,7 @@ node scripts/suggest-groups.mjs data/figures 0.65
 If needed:
 
 ```bash
-npm run gallery:seed -- ~/cernbox/talks_preparation
+npm run gallery:seed -- /path/to/talks_preparation
 ```
 
 This imports unique TikZ `.tex` files into `data/figures`, excludes Beamer slide files, and copies sidecar PDF/PNG when found.
