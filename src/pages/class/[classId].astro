@@ -10,6 +10,8 @@ export async function getStaticPaths() {
 }
 
 const { classItem } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const withBase = (assetPath) => `${base}${String(assetPath || "").replace(/^\/+/, "")}`;
 ---
 
 <html lang="en">
@@ -20,7 +22,7 @@ const { classItem } = Astro.props;
   </head>
   <body>
     <main>
-      <a class="back" href="/">Back to classes</a>
+      <a class="back" href={base}>Back to classes</a>
       <section class="hero banner">
         <h1>{classItem.class_name}</h1>
         <p>{classItem.figure_count} figures in this class</p>
@@ -30,7 +32,7 @@ const { classItem } = Astro.props;
         {classItem.figures.map((figure) => (
           <article class="card">
             {figure.thumb_url ? (
-              <img class="thumb" src={figure.thumb_url} alt={figure.title} loading="lazy" />
+              <img class="thumb" src={withBase(figure.thumb_url)} alt={figure.title} loading="lazy" />
             ) : (
               <div class="thumb placeholder" aria-hidden="true"></div>
             )}
@@ -39,12 +41,12 @@ const { classItem } = Astro.props;
             <div class="actions">
               <button class="btn primary copy-code" data-code={encodeURIComponent(figure.tex_code)}>Copy TikZ</button>
               {figure.png_url ? (
-                <a class="btn" href={figure.png_url} download>Download PNG</a>
+                <a class="btn" href={withBase(figure.png_url)} download>Download PNG</a>
               ) : (
                 <span class="btn disabled" aria-disabled="true">Download PNG</span>
               )}
               {figure.pdf_url ? (
-                <a class="btn" href={figure.pdf_url} download>Download PDF</a>
+                <a class="btn" href={withBase(figure.pdf_url)} download>Download PDF</a>
               ) : (
                 <span class="btn disabled" aria-disabled="true">Download PDF</span>
               )}

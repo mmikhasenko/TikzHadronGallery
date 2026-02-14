@@ -118,8 +118,8 @@ for (const [familyHash, group] of familyMap.entries()) {
     await fsp.copyFile(pngSource, pngTarget);
     await writeThumb(pngTarget, thumbTarget);
     copiedPngCount += 1;
-    pngUrl = `/generated/png/${id}.png`;
-    thumbUrl = `/generated/thumbs/${id}.png`;
+    pngUrl = `generated/png/${id}.png`;
+    thumbUrl = `generated/thumbs/${id}.png`;
   }
 
   if (!fs.existsSync(pdfTarget) && pdfSource) {
@@ -128,14 +128,14 @@ for (const [familyHash, group] of familyMap.entries()) {
   }
 
   if (fs.existsSync(pdfTarget)) {
-    pdfUrl = `/generated/pdf/${id}.pdf`;
+    pdfUrl = `generated/pdf/${id}.pdf`;
     if (!pngUrl) {
       const rendered = renderPngFromPdf(pdfTarget, pngTarget);
       if (rendered) {
         await writeThumb(pngTarget, thumbTarget);
         renderedPngFromPdfCount += 1;
-        pngUrl = `/generated/png/${id}.png`;
-        thumbUrl = `/generated/thumbs/${id}.png`;
+        pngUrl = `generated/png/${id}.png`;
+        thumbUrl = `generated/thumbs/${id}.png`;
       }
     }
   }

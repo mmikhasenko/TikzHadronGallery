@@ -3,6 +3,8 @@ import "../styles/global.css";
 import gallery from "../generated/gallery-index.json";
 
 const classes = gallery.classes.slice(0, 60);
+const base = import.meta.env.BASE_URL;
+const withBase = (assetPath) => `${base}${String(assetPath || "").replace(/^\/+/, "")}`;
 ---
 
 <html lang="en">
@@ -28,9 +30,9 @@ const classes = gallery.classes.slice(0, 60);
       ) : (
         <section class="grid">
           {classes.map((item) => (
-            <a class="card" href={`/class/${item.class_id}/`}>
+            <a class="card" href={`${base}class/${item.class_id}/`}>
               {item.class_thumb_url ? (
-                <img class="thumb class-thumb" src={item.class_thumb_url} alt={item.class_name} loading="lazy" />
+                <img class="thumb class-thumb" src={withBase(item.class_thumb_url)} alt={item.class_name} loading="lazy" />
               ) : (
                 <div class="thumb placeholder" aria-hidden="true"></div>
               )}
