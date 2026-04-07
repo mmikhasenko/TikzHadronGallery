@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-02-14T10:32:37.245Z",
+  "generated_at": "2026-04-07T09:56:03.303Z",
   "source_dir": "/Users/mikhailmikhasenko/Documents/COMPASS.CAT/TikzGallegy/data/figures",
   "totals": {
     "all_files": 191,
     "tex_files": 189,
-    "tikz_tex_files": 181,
-    "unique_families": 181,
+    "tikz_tex_files": 180,
+    "unique_families": 180,
     "duplicate_instances": 0,
     "classes": 17,
-    "compiled_pdfs": 178,
+    "compiled_pdfs": 180,
     "copied_pdfs": 0,
     "copied_pngs": 1,
-    "rendered_pngs_from_pdf": 177,
-    "resolved_inputs": 193,
+    "rendered_pngs_from_pdf": 179,
+    "resolved_inputs": 195,
     "unresolved_inputs": 0,
-    "excluded_files": 8
+    "excluded_files": 9
   },
   "by_extension": {
     "tex": 189,
@@ -28,7 +28,7 @@
     },
     {
       "key": "Particle cartoons",
-      "count": 49
+      "count": 48
     },
     {
       "key": "Compass like reactions",

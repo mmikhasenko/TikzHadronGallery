@@ -1,4 +1,5 @@
 baryons/meson-baryon.tex
+particle-cartoons/meson-baryon.tex
 diagrams/diagrams.tex
 diagrams/diagrams-2.tex
 diagrams/diagrams-3.tex

@@ -1,5 +1,7 @@
-\newcommand{\deltaK}{\ensuremath{
-  \Delta_s\,
+\input{scattering-diagrams}
+
+\newcommand{\deltaK}{
+  $\Delta_s\,$
   \begin{tikzpicture}[baseline=0cm,scale=\scl]
     \var
   %
@@ -7,9 +9,9 @@
     \draw[double] (0,{-\yt}) -- (2.0,{-\yt});
     \draw[fill=white] (\xm,0) ellipse ({1.4*\xm} and {1.6*\Rad});
     \node[] () at ({\xm},0) {K};
-  \end{tikzpicture}  =
+  \end{tikzpicture}  $=$
   \Ksum
-  \bigg|
+  $\bigg|$
   \begin{tikzpicture}[baseline=0cm,scale=\scl]
     \var
     \draw[double] (4.5,{\yt})  -- (5.0,{\yt});
@@ -26,8 +28,8 @@
     \draw[fill=white] (6.0,-\yt) ellipse (0.2);
     \draw[fill=white] (7.0,\yt) ellipse (0.2);
     \draw[fill=white] (8.0,-\yt) ellipse (0.2);
-  \end{tikzpicture} +
-  \Ksum\bigg|
+  \end{tikzpicture} $+$
+  \Ksum$\bigg|$
     \begin{tikzpicture}[baseline=0cm,scale=\scl]
       \var
   %
@@ -46,8 +48,8 @@
     \draw[fill=white] (6.0,{+\yt}) ellipse (0.2);
     \draw[fill=white] (8.0,{+\yt}) ellipse (0.2);
     \draw[fill=white] (7.0,{-\yt}) ellipse (0.2);
-  \end{tikzpicture}+
-  \Ksum\bigg|
+  \end{tikzpicture}$+$
+  \Ksum$\bigg|$
   \begin{tikzpicture}[baseline=0cm,scale=\scl]
     \var
     \draw[double] (4.5,{\yt})  -- (5.0,{\yt});
@@ -58,8 +60,8 @@
   %
     \draw[fill=white] (5.0,\yt) ellipse (0.2);
     \draw[fill=white] (6.0,-\yt) ellipse (0.2);
-  \end{tikzpicture}+
-  \Ksum\bigg|
+  \end{tikzpicture}$+$
+  \Ksum$\bigg|$
     \begin{tikzpicture}[baseline=0cm,scale=\scl]
       \var
   %
@@ -74,4 +76,5 @@
     \draw[fill=white] (6.0,{+\yt}) ellipse (0.2);
   \end{tikzpicture}
 }
-}
+
+\deltaK

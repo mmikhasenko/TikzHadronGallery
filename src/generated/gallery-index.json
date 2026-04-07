@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-14T10:32:37.248Z",
+  "generated_at": "2026-04-07T09:56:03.307Z",
   "classes": [
     {
       "class_id": "cascade",
@@ -712,7 +712,7 @@
     {
       "class_id": "particle-cartoons",
       "class_name": "Particle cartoons",
-      "figure_count": 49,
+      "figure_count": 48,
       "class_thumb_url": "generated/thumbs/13c762128ef7041c.png",
       "figures": [
         {
@@ -1077,20 +1077,6 @@
           "png_url": "generated/png/918087987ca3b6a9.png",
           "pdf_url": "generated/pdf/918087987ca3b6a9.pdf",
           "thumb_url": "generated/thumbs/918087987ca3b6a9.png",
-          "source_count": 1
-        },
-        {
-          "id": "d5f764b4a50e4cd7",
-          "title": "Meson baryon",
-          "stem": "meson-baryon",
-          "class_name": "Particle cartoons",
-          "class_id": "particle-cartoons",
-          "family_hash": "d5f764b4a50e4cd782604bfab1d92a6d7d39e88ba9c5f24808353039d5d8d762",
-          "duplicate_count": 1,
-          "tex_code": "\\newcommand{\\baryon}[4]{\r\n\\scalebox{0.8}{\r\n\\begin{tikzpicture}[node distance=0.7cm and 1.0cm, baseline=-1cm]\r\n  \\node[coordinate] (a) at (-1,0) {};\r\n  \\filldraw[even odd rule,inner color=cola,outer color=white] (a) circle (1cm);\r\n  \\draw[black,thick] (a) circle (1cm);\r\n  \\draw[black] (a) ++(0.3,0.3) circle (3mm) node[] {#3};\r\n  \\draw[black] (a) ++(-0.4,0.1) circle (3mm) node[] {#2};\r\n  \\filldraw[even odd rule,inner color=quark,outer color=white] (a) ++(0,-0.5) circle (3mm);\r\n  \\draw[black, thick] (a) ++(0,-0.5) circle (3mm) node[] {#1};\r\n  \\draw[black] (a) ++(-1,-1) node[] {#4};\r\n\\end{tikzpicture}\r\n}}\r\n\r\n\\newcommand{\\meson}[3]{\r\n\\scalebox{0.8}{\r\n\\begin{tikzpicture}[node distance=0.7cm and 1.0cm, baseline=-1cm]\r\n  \\node[coordinate] (a) at (-1,0) {};\r\n  \\filldraw[even odd rule,inner color=colb,outer color=white] (a) circle (1cm);\r\n  \\draw[black,thick] (a) circle (1cm);\r\n  \\draw[black] (a) ++(0.24,0.3) circle (3mm) node[] {#2};\r\n  \\filldraw[even odd rule,inner color=quark,outer color=white] (a) ++(-0.24,-0.4) circle (3mm);\r\n  \\draw[black, thick] (a) ++(-0.24,-0.4) circle (3mm) node[] {#1};\r\n  \\draw[black] (a) ++(-1,-1) node[] {#3};\r\n\\end{tikzpicture}\r\n}}\r\n\r\n\\newcommand{\\quarkonia}[3]{\r\n\\scalebox{0.8}{\r\n\\begin{tikzpicture}[node distance=0.7cm and 1.0cm, baseline=-1cm]\r\n  \\node[coordinate] (a) at (-1,0) {};\r\n  \\filldraw[even odd rule,inner color=colb,outer color=white] (a) circle (1cm);\r\n  \\draw[black,thick] (a) circle (1cm);\r\n  \\filldraw[even odd rule,inner color=quark,outer color=white] (a) ++(0.24,0.3) circle (3mm);\r\n  \\draw[black, thick] (a) ++(0.24,0.3) circle (3mm) node[] {#2};\r\n  \\filldraw[even odd rule,inner color=quark,outer color=white] (a) ++(-0.24,-0.4) circle (3mm);\r\n  \\draw[black, thick] (a) ++(-0.24,-0.4) circle (3mm) node[] {#1};\r\n  \\draw[black] (a) ++(-1,-1) node[] {#3};\r\n\\end{tikzpicture}\r\n}}\r\n",
-          "png_url": "",
-          "pdf_url": "",
-          "thumb_url": "",
           "source_count": 1
         },
         {
@@ -2335,34 +2321,34 @@
       "class_id": "scattering-theory",
       "class_name": "Scattering theory",
       "figure_count": 6,
-      "class_thumb_url": "generated/thumbs/7cf88ca5ea72f747.png",
+      "class_thumb_url": "generated/thumbs/168988a3f73b0e2c.png",
       "figures": [
         {
-          "id": "b6b5f61a53524a85",
+          "id": "168988a3f73b0e2c",
           "title": "Disc K",
           "stem": "disc_K",
           "class_name": "Scattering theory",
           "class_id": "scattering-theory",
-          "family_hash": "b6b5f61a53524a85c4a3f45bc3a8267710ceaa2af454ccefbad195b77975e29b",
+          "family_hash": "168988a3f73b0e2ca7fbc6bdc92c48392188a02b84c1b508ee16de5b9abd0ee6",
           "duplicate_count": 1,
-          "tex_code": "\\newcommand{\\deltaK}{\\ensuremath{\n  \\Delta_s\\,\n  \\begin{tikzpicture}[baseline=0cm,scale=\\scl]\n    \\var\n  %\n    \\draw[]  (0,{ \\yt}) -- (2.0,{ \\yt});\n    \\draw[double] (0,{-\\yt}) -- (2.0,{-\\yt});\n    \\draw[fill=white] (\\xm,0) ellipse ({1.4*\\xm} and {1.6*\\Rad});\n    \\node[] () at ({\\xm},0) {K};\n  \\end{tikzpicture}  =\n  \\Ksum\n  \\bigg|\n  \\begin{tikzpicture}[baseline=0cm,scale=\\scl]\n    \\var\n    \\draw[double] (4.5,{\\yt})  -- (5.0,{\\yt});\n    \\draw[]       (4.5,{-\\yt}) -- (6.0,{-\\yt});\n    \\draw[] (5.0,{ \\yt}) -- (6.0,{-\\yt});\n    \\draw[dotted] (5.0,{ \\yt}) -- (7.0,{ \\yt});\n    \\draw[dotted] (6.0,{-\\yt}) -- node[] {\\tiny $\\sum$} (7.0,{\\yt});\n    \\draw[dotted] (6.0,{-\\yt}) -- (8.0,{-\\yt});\n    \\draw[] (7.0,{ \\yt}) -- (8.0,{-\\yt});\n    \\draw[] (7.0,{ \\yt}) -- (9.0,{ \\yt});\n    \\draw[double] (8.0,{-\\yt}) -- (9.0,{-\\yt});\n  %\n    \\draw[fill=white] (5.0,\\yt) ellipse (0.2);\n    \\draw[fill=white] (6.0,-\\yt) ellipse (0.2);\n    \\draw[fill=white] (7.0,\\yt) ellipse (0.2);\n    \\draw[fill=white] (8.0,-\\yt) ellipse (0.2);\n  \\end{tikzpicture} +\n  \\Ksum\\bigg|\n    \\begin{tikzpicture}[baseline=0cm,scale=\\scl]\n      \\var\n  %\n  \\draw[double] (4.5,{-\\yt})  -- (5.0,{-\\yt});\n  \\draw[]       (4.5,{+\\yt}) -- (6.0,{+\\yt});\n    % \\draw[] (6.0,{-\\yt}) -- (7.0,{-\\yt});\n    \\draw[] (5.0,{-\\yt}) -- (6.0,{+\\yt});\n    \\draw[dotted] (5.0,{-\\yt}) -- (7.0,{-\\yt});\n    \\draw[dotted] (6.0,{+\\yt}) -- node[] {\\tiny $\\sum$} (7.0,{-\\yt});\n    \\draw[dotted] (6.0,{+\\yt}) -- (8.0,{+\\yt});\n    \\draw[] (7.0,{-\\yt}) -- (8.0,{+\\yt});\n    \\draw[] (7.0,{-\\yt}) -- (9.0,{-\\yt});\n    \\draw[double] (8.0,{+\\yt}) -- (9.0,{+\\yt});\n  %\n    \\draw[fill=white] (5.0,{-\\yt}) ellipse (0.2);\n    \\draw[fill=white] (6.0,{+\\yt}) ellipse (0.2);\n    \\draw[fill=white] (8.0,{+\\yt}) ellipse (0.2);\n    \\draw[fill=white] (7.0,{-\\yt}) ellipse (0.2);\n  \\end{tikzpicture}+\n  \\Ksum\\bigg|\n  \\begin{tikzpicture}[baseline=0cm,scale=\\scl]\n    \\var\n    \\draw[double] (4.5,{\\yt})  -- (5.0,{\\yt});\n    \\draw[]       (4.5,{-\\yt}) -- (6.0,{-\\yt});\n    \\draw[] (5.0,{ \\yt}) -- (6.0,{-\\yt});\n    \\draw[] (5.0,{ \\yt}) -- (6.5,{ \\yt});\n    \\draw[double] (6.0,{-\\yt}) -- (6.5,{-\\yt});\n  %\n    \\draw[fill=white] (5.0,\\yt) ellipse (0.2);\n    \\draw[fill=white] (6.0,-\\yt) ellipse (0.2);\n  \\end{tikzpicture}+\n  \\Ksum\\bigg|\n    \\begin{tikzpicture}[baseline=0cm,scale=\\scl]\n      \\var\n  %\n  \\draw[double] (4.5,{-\\yt})  -- (5.0,{-\\yt});\n  \\draw[]       (4.5,{+\\yt}) -- (6.0,{+\\yt});\n    % \\draw[] (6.0,{-\\yt}) -- (7.0,{-\\yt});\n    \\draw[] (5.0,{-\\yt}) -- (6.0,{+\\yt});\n    \\draw[] (5.0,{-\\yt}) -- (6.5,{-\\yt});\n    \\draw[double] (6.0,{+\\yt}) -- (6.5,{+\\yt});\n  %\n    \\draw[fill=white] (5.0,{-\\yt}) ellipse (0.2);\n    \\draw[fill=white] (6.0,{+\\yt}) ellipse (0.2);\n  \\end{tikzpicture}\n}\n}\n",
-          "png_url": "",
-          "pdf_url": "",
-          "thumb_url": "",
+          "tex_code": "\\input{scattering-diagrams}\n\n\\newcommand{\\deltaK}{\n  $\\Delta_s\\,$\n  \\begin{tikzpicture}[baseline=0cm,scale=\\scl]\n    \\var\n  %\n    \\draw[]  (0,{ \\yt}) -- (2.0,{ \\yt});\n    \\draw[double] (0,{-\\yt}) -- (2.0,{-\\yt});\n    \\draw[fill=white] (\\xm,0) ellipse ({1.4*\\xm} and {1.6*\\Rad});\n    \\node[] () at ({\\xm},0) {K};\n  \\end{tikzpicture}  $=$\n  \\Ksum\n  $\\bigg|$\n  \\begin{tikzpicture}[baseline=0cm,scale=\\scl]\n    \\var\n    \\draw[double] (4.5,{\\yt})  -- (5.0,{\\yt});\n    \\draw[]       (4.5,{-\\yt}) -- (6.0,{-\\yt});\n    \\draw[] (5.0,{ \\yt}) -- (6.0,{-\\yt});\n    \\draw[dotted] (5.0,{ \\yt}) -- (7.0,{ \\yt});\n    \\draw[dotted] (6.0,{-\\yt}) -- node[] {\\tiny $\\sum$} (7.0,{\\yt});\n    \\draw[dotted] (6.0,{-\\yt}) -- (8.0,{-\\yt});\n    \\draw[] (7.0,{ \\yt}) -- (8.0,{-\\yt});\n    \\draw[] (7.0,{ \\yt}) -- (9.0,{ \\yt});\n    \\draw[double] (8.0,{-\\yt}) -- (9.0,{-\\yt});\n  %\n    \\draw[fill=white] (5.0,\\yt) ellipse (0.2);\n    \\draw[fill=white] (6.0,-\\yt) ellipse (0.2);\n    \\draw[fill=white] (7.0,\\yt) ellipse (0.2);\n    \\draw[fill=white] (8.0,-\\yt) ellipse (0.2);\n  \\end{tikzpicture} $+$\n  \\Ksum$\\bigg|$\n    \\begin{tikzpicture}[baseline=0cm,scale=\\scl]\n      \\var\n  %\n  \\draw[double] (4.5,{-\\yt})  -- (5.0,{-\\yt});\n  \\draw[]       (4.5,{+\\yt}) -- (6.0,{+\\yt});\n    % \\draw[] (6.0,{-\\yt}) -- (7.0,{-\\yt});\n    \\draw[] (5.0,{-\\yt}) -- (6.0,{+\\yt});\n    \\draw[dotted] (5.0,{-\\yt}) -- (7.0,{-\\yt});\n    \\draw[dotted] (6.0,{+\\yt}) -- node[] {\\tiny $\\sum$} (7.0,{-\\yt});\n    \\draw[dotted] (6.0,{+\\yt}) -- (8.0,{+\\yt});\n    \\draw[] (7.0,{-\\yt}) -- (8.0,{+\\yt});\n    \\draw[] (7.0,{-\\yt}) -- (9.0,{-\\yt});\n    \\draw[double] (8.0,{+\\yt}) -- (9.0,{+\\yt});\n  %\n    \\draw[fill=white] (5.0,{-\\yt}) ellipse (0.2);\n    \\draw[fill=white] (6.0,{+\\yt}) ellipse (0.2);\n    \\draw[fill=white] (8.0,{+\\yt}) ellipse (0.2);\n    \\draw[fill=white] (7.0,{-\\yt}) ellipse (0.2);\n  \\end{tikzpicture}$+$\n  \\Ksum$\\bigg|$\n  \\begin{tikzpicture}[baseline=0cm,scale=\\scl]\n    \\var\n    \\draw[double] (4.5,{\\yt})  -- (5.0,{\\yt});\n    \\draw[]       (4.5,{-\\yt}) -- (6.0,{-\\yt});\n    \\draw[] (5.0,{ \\yt}) -- (6.0,{-\\yt});\n    \\draw[] (5.0,{ \\yt}) -- (6.5,{ \\yt});\n    \\draw[double] (6.0,{-\\yt}) -- (6.5,{-\\yt});\n  %\n    \\draw[fill=white] (5.0,\\yt) ellipse (0.2);\n    \\draw[fill=white] (6.0,-\\yt) ellipse (0.2);\n  \\end{tikzpicture}$+$\n  \\Ksum$\\bigg|$\n    \\begin{tikzpicture}[baseline=0cm,scale=\\scl]\n      \\var\n  %\n  \\draw[double] (4.5,{-\\yt})  -- (5.0,{-\\yt});\n  \\draw[]       (4.5,{+\\yt}) -- (6.0,{+\\yt});\n    % \\draw[] (6.0,{-\\yt}) -- (7.0,{-\\yt});\n    \\draw[] (5.0,{-\\yt}) -- (6.0,{+\\yt});\n    \\draw[] (5.0,{-\\yt}) -- (6.5,{-\\yt});\n    \\draw[double] (6.0,{+\\yt}) -- (6.5,{+\\yt});\n  %\n    \\draw[fill=white] (5.0,{-\\yt}) ellipse (0.2);\n    \\draw[fill=white] (6.0,{+\\yt}) ellipse (0.2);\n  \\end{tikzpicture}\n}\n\n\\deltaK\n",
+          "png_url": "generated/png/168988a3f73b0e2c.png",
+          "pdf_url": "generated/pdf/168988a3f73b0e2c.pdf",
+          "thumb_url": "generated/thumbs/168988a3f73b0e2c.png",
           "source_count": 1
         },
         {
-          "id": "a94e69003cc3f191",
+          "id": "a67c8d6947d39a59",
           "title": "K diag",
           "stem": "K_diag",
           "class_name": "Scattering theory",
           "class_id": "scattering-theory",
-          "family_hash": "a94e69003cc3f19178e0fce787b83d4dee35fc887626d196636889be8b87eca7",
+          "family_hash": "a67c8d6947d39a59bd44d64d66a11029afdf7a1236114c0203af2ef7b56e525e",
           "duplicate_count": 1,
-          "tex_code": "\\ensuremath{\n\\begin{tikzpicture}[baseline=0cm,scale=\\scl]\n  \\var\n%\n  \\draw[]  (0,{ \\yt}) -- (2.0,{ \\yt});\n  \\draw[double] (0,{-\\yt}) -- (2.0,{-\\yt});\n  \\draw[fill=white] (\\xm,0) ellipse ({1.4*\\xm} and {1.6*\\Rad});\n  \\node[] () at ({\\xm},0) {K};\n\\end{tikzpicture}  =\n\\begin{tikzpicture}[baseline=0cm,scale=\\scl]\n    \\var\n    \\draw[double] (0,0) -- (2.0,{ \\yt});\n    \\draw[] (0,0) -- (2.0,{-\\yt});\n    \\draw[fill=black] (0,0) ellipse (0.2);\n    %\n\\end{tikzpicture} +\n\\begin{tikzpicture}[baseline=0cm,scale=\\scl]\n    \\var\n    \\draw[] (0,0) -- (3.0,{ \\yt});\n    \\draw[double] (0,0) -- (2.0,{-\\yt});\n    \\draw[fill=black] (0,0) ellipse (0.2);\n  %\n    \\draw[] (2.0,{-\\yt}) -- (3.0,{ \\yt});\n    \\draw[double] (3.0,{ \\yt}) -- (3.5,{\\yt});\n    \\draw[] (2.0,{-\\yt}) -- (3.5,{-\\yt});\n  %\n  \\draw[fill=white] (2.0,-\\yt) ellipse (0.2);\n  \\draw[fill=white] (3.0,\\yt) ellipse (0.2);\n\\end{tikzpicture} +\n\\dots+\n\\begin{tikzpicture}[baseline=0cm,scale=\\scl]\n  \\var\n%\n  \\draw[]  (0,0) -- (3.0,{ \\yt});\n  \\draw[double] (0,0) -- (2.0,{-\\yt});\n  \\draw[fill=black] (0,0) ellipse (0.2);\n%\n  \\draw[] (2.0,{-\\yt}) -- (3.0,{ \\yt});\n  \\draw[] (3.0,{ \\yt}) -- (4.0,{-\\yt});\n  \\draw[] (2.0,{-\\yt}) -- (4.0,{-\\yt});\n%\n\\draw[dotted] (3.0,{\\yt}) -- (5.0,{\\yt});\n\\draw[dotted] (4.0,{-\\yt}) -- (5.0,{\\yt});\n  \\draw[dotted] (4.0,{-\\yt}) -- (6.0,{-\\yt});\n  % \\draw[] (6.0,{-\\yt}) -- (7.0,{-\\yt});\n  \\draw[] (5.0,{ \\yt}) -- (6.0,{-\\yt});\n  \\draw[] (5.0,{ \\yt}) -- (7.0,{ \\yt});\n  \\draw[] (6.0,{-\\yt}) -- (7.0,{\\yt});\n  \\draw[] (6.0,{-\\yt}) -- (8.0,{-\\yt});\n  \\draw[] (7.0,{ \\yt}) -- (8.0,{-\\yt});\n  \\draw[] (7.0,{ \\yt}) -- (9.0,{ \\yt});\n  \\draw[double] (8.0,{-\\yt}) -- (9.0,{-\\yt});\n%\n  \\draw[fill=white] (2.0,-\\yt) ellipse (0.2);\n  \\draw[fill=white] (3.0,\\yt) ellipse (0.2);\n  \\draw[fill=white] (4.0,-\\yt) ellipse (0.2);\n  \\draw[fill=white] (5.0,\\yt) ellipse (0.2);\n  \\draw[fill=white] (6.0,-\\yt) ellipse (0.2);\n  \\draw[fill=white] (7.0,\\yt) ellipse (0.2);\n  \\draw[fill=white] (8.0,-\\yt) ellipse (0.2);\n\\end{tikzpicture}+\n\\dots\n% \\equiv\n% \\Ksum\n}\n",
-          "png_url": "",
-          "pdf_url": "",
-          "thumb_url": "",
+          "tex_code": "\\input{scattering-diagrams}\n\n\\begin{tikzpicture}[baseline=0cm,scale=\\scl]\n  \\var\n%\n  \\draw[]  (0,{ \\yt}) -- (2.0,{ \\yt});\n  \\draw[double] (0,{-\\yt}) -- (2.0,{-\\yt});\n  \\draw[fill=white] (\\xm,0) ellipse ({1.4*\\xm} and {1.6*\\Rad});\n  \\node[] () at ({\\xm},0) {K};\n\\end{tikzpicture}  $=$\n\\begin{tikzpicture}[baseline=0cm,scale=\\scl]\n    \\var\n    \\draw[double] (0,0) -- (2.0,{ \\yt});\n    \\draw[] (0,0) -- (2.0,{-\\yt});\n    \\draw[fill=black] (0,0) ellipse (0.2);\n    %\n\\end{tikzpicture} $+$\n\\begin{tikzpicture}[baseline=0cm,scale=\\scl]\n    \\var\n    \\draw[] (0,0) -- (3.0,{ \\yt});\n    \\draw[double] (0,0) -- (2.0,{-\\yt});\n    \\draw[fill=black] (0,0) ellipse (0.2);\n  %\n    \\draw[] (2.0,{-\\yt}) -- (3.0,{ \\yt});\n    \\draw[double] (3.0,{ \\yt}) -- (3.5,{\\yt});\n    \\draw[] (2.0,{-\\yt}) -- (3.5,{-\\yt});\n  %\n  \\draw[fill=white] (2.0,-\\yt) ellipse (0.2);\n  \\draw[fill=white] (3.0,\\yt) ellipse (0.2);\n\\end{tikzpicture} $+$\n$\\dots+$\n\\begin{tikzpicture}[baseline=0cm,scale=\\scl]\n  \\var\n%\n  \\draw[]  (0,0) -- (3.0,{ \\yt});\n  \\draw[double] (0,0) -- (2.0,{-\\yt});\n  \\draw[fill=black] (0,0) ellipse (0.2);\n%\n  \\draw[] (2.0,{-\\yt}) -- (3.0,{ \\yt});\n  \\draw[] (3.0,{ \\yt}) -- (4.0,{-\\yt});\n  \\draw[] (2.0,{-\\yt}) -- (4.0,{-\\yt});\n%\n\\draw[dotted] (3.0,{\\yt}) -- (5.0,{\\yt});\n\\draw[dotted] (4.0,{-\\yt}) -- (5.0,{\\yt});\n  \\draw[dotted] (4.0,{-\\yt}) -- (6.0,{-\\yt});\n  % \\draw[] (6.0,{-\\yt}) -- (7.0,{-\\yt});\n  \\draw[] (5.0,{ \\yt}) -- (6.0,{-\\yt});\n  \\draw[] (5.0,{ \\yt}) -- (7.0,{ \\yt});\n  \\draw[] (6.0,{-\\yt}) -- (7.0,{\\yt});\n  \\draw[] (6.0,{-\\yt}) -- (8.0,{-\\yt});\n  \\draw[] (7.0,{ \\yt}) -- (8.0,{-\\yt});\n  \\draw[] (7.0,{ \\yt}) -- (9.0,{ \\yt});\n  \\draw[double] (8.0,{-\\yt}) -- (9.0,{-\\yt});\n%\n  \\draw[fill=white] (2.0,-\\yt) ellipse (0.2);\n  \\draw[fill=white] (3.0,\\yt) ellipse (0.2);\n  \\draw[fill=white] (4.0,-\\yt) ellipse (0.2);\n  \\draw[fill=white] (5.0,\\yt) ellipse (0.2);\n  \\draw[fill=white] (6.0,-\\yt) ellipse (0.2);\n  \\draw[fill=white] (7.0,\\yt) ellipse (0.2);\n  \\draw[fill=white] (8.0,-\\yt) ellipse (0.2);\n\\end{tikzpicture}$+$\n$\\dots$\n% \\equiv\n% \\Ksum\n",
+          "png_url": "generated/png/a67c8d6947d39a59.png",
+          "pdf_url": "generated/pdf/a67c8d6947d39a59.pdf",
+          "thumb_url": "generated/thumbs/a67c8d6947d39a59.png",
           "source_count": 1
         },
         {

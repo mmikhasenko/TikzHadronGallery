@@ -1,0 +1,27 @@
+\newcommand{\var}{
+\def\xt{2.5cm}
+\def\xm{0.5cm}
+\def\yt{1cm}
+\def\dyt{0.1cm}
+}
+\newcommand{\scl}{0.3}
+\newcommand{\Rad}{0.85cm}
+
+\newcommand{\Ksum}{
+  \begin{tikzpicture}[baseline=0cm,scale=\scl]
+    \var
+    \draw[] (0,0) -- (3.0,{\yt});
+    \draw[double] (0,0) -- (2.0,{-\yt});
+    \draw[fill=black] (0,0) ellipse (0.2);
+    \draw[] (2.0,{-\yt}) -- (3.0,{\yt});
+    \draw[dotted] (3.0,{\yt}) -- node[] {\tiny $\sum$} (4.0,{-\yt});
+    \draw[] (4.0,{-\yt}) -- (5.0,{+\yt});
+    \draw[dotted] (2.0,{-\yt}) -- (4.0,{-\yt});
+    \draw[dotted] (3.0,{\yt}) -- (5.0,{\yt});
+    \draw[double] (5.0,{\yt}) -- (5.5,{\yt});
+    \draw[] (4.0,{-\yt}) -- (5.5,{-\yt});
+    \draw[fill=white] (2.0,-\yt) ellipse (0.2);
+    \draw[fill=white] (3.0,\yt) ellipse (0.2);
+    \draw[fill=white] (4.0,-\yt) ellipse (0.2);
+  \end{tikzpicture}
+}

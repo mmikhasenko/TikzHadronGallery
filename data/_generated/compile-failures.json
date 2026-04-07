@@ -1,20 +1,4 @@
 {
-  "generated_at": "2026-02-14T10:32:37.252Z",
-  "compile_failures": [
-    {
-      "figure": "particle-cartoons/meson-baryon.tex",
-      "class_name": "Particle cartoons",
-      "message": "(/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)) (./source.tex) (./wrapper.aux) ) No pages of output. Transcript written on wrapper.log. Latexmk: Getting log file 'wrapper.log' Latexmk: Examining 'wrapper.fls' Latexmk: Examining 'wrapper.log' Latexmk: Log file says no output from latex Latexmk: For rule 'pdflatex', no output was made Latexmk: Errors, so I did not complete making targets"
-    },
-    {
-      "figure": "scattering-theory/K_diag.tex",
-      "class_name": "Scattering theory",
-      "message": "! Undefined control sequence. <argument> \\scl                   l.65 }         Here is how much of TeX's memory you used:"
-    },
-    {
-      "figure": "scattering-theory/disc_K.tex",
-      "class_name": "Scattering theory",
-      "message": "(/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)) (./source.tex) (./wrapper.aux) ) No pages of output. Transcript written on wrapper.log. Latexmk: Getting log file 'wrapper.log' Latexmk: Examining 'wrapper.fls' Latexmk: Examining 'wrapper.log' Latexmk: Log file says no output from latex Latexmk: For rule 'pdflatex', no output was made Latexmk: Errors, so I did not complete making targets"
-    }
-  ]
+  "generated_at": "2026-04-07T09:56:03.311Z",
+  "compile_failures": []
 }
