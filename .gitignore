@@ -3,7 +3,10 @@ dist/
 .astro/
 .DS_Store
 .codex/
+docs/
 public/generated/
+src/generated/gallery-index.json
+data/_generated/
 *.aux
 *.fdb_latexmk
 *.fls
