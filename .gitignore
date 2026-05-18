@@ -3,3 +3,8 @@ dist/
 .astro/
 .DS_Store
 .codex/
+public/generated/
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
