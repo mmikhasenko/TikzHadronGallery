@@ -1,0 +1,58 @@
+\documentclass[tikz]{standalone}
+
+\input{mytikzset}
+
+\begin{document}
+\nopagecolor
+\begin{tikzpicture}[node distance=0.9cm and 1.3cm, baseline=0.9cm]
+  \coordinate (pv) at (0,0);
+  \coordinate (vC) at (0.85,0.35);
+  \coordinate (vXi) at (1.75,0.65);
+  \coordinate (vL) at (2.65,0.95);
+
+  % Irregular PV activity, concentrated around the beam axis.
+  \draw[very thin,black!22] (pv) -- ++(-176:1.05);
+  \draw[very thin,black!30] (pv) -- ++(-171:1.25);
+  \draw[very thin,black!25] (pv) -- ++(-166:1.45);
+  \draw[very thin,black!35] (pv) -- ++(-160:1.10);
+  \draw[very thin,black!20] (pv) -- ++(-153:0.90);
+  \draw[very thin,black!28] (pv) -- ++(-147:1.30);
+  \draw[very thin,black!32] (pv) -- ++(146:1.05);
+  \draw[very thin,black!24] (pv) -- ++(154:1.20);
+  \draw[very thin,black!30] (pv) -- ++(162:0.95);
+  \draw[very thin,black!22] (pv) -- ++(170:1.35);
+  \draw[very thin,black!35] (pv) -- ++(176:1.15);
+
+  \draw[very thin,black!26] (pv) -- ++(-28:1.15);
+  \draw[very thin,black!33] (pv) -- ++(-20:1.35);
+  \draw[very thin,black!24] (pv) -- ++(-14:1.00);
+  \draw[very thin,black!30] (pv) -- ++(-8:1.55);
+  \draw[very thin,black!22] (pv) -- ++(-3:1.10);
+  \draw[very thin,black!35] (pv) -- ++(4:1.45);
+  \draw[very thin,black!27] (pv) -- ++(11:0.95);
+  \draw[very thin,black!32] (pv) -- ++(18:1.20);
+  \draw[very thin,black!24] (pv) -- ++(25:1.05);
+
+  \draw[->,thick] (-2.0,0) -- node[below] {$p$} (-0.1,0);
+  \draw[->,thick] ( 2.0,0) -- node[below] {$p$} ( 0.1,0);
+
+  \draw[dashed] (pv) -- node[above left] {$\Xi_c^+$} (vC);
+  \draw (vC) -- node[above left] {$\Xi^-$} (vXi);
+  \draw (vXi) -- node[above left] {$\Lambda$} (vL);
+
+  \draw (vL) -- (4.35,1.25) node[right] {$p$};
+  \draw (vL) -- (4.15,0.95) node[right] {$\pi^-$};
+  \draw (vXi) -- (4.05,0.45) node[right] {$\pi^-$};
+  \draw (vC) to[out=35,in=180] (3.75,1.55) node[right] {$\pi^+$};
+  \draw (vC) to[out=-35,in=180] (3.65,-0.25) node[right] {$\pi^+$};
+
+  \draw[very thin,black!35] (pv) -- (2.6,-0.55);
+  \draw[very thin,black!35] (pv) -- (2.3,-0.85);
+  \draw[very thin,black!35] (pv) -- (2.0,-1.15) node[right,black!55] {$X$};
+
+  \draw[red!50!black] (pv) circle (1.5mm);
+  \draw[red!50!black] (vC) circle (1.5mm);
+  \draw[red!50!black] (vXi) circle (1.5mm);
+  \draw[red!50!black] (vL) circle (1.5mm);
+\end{tikzpicture}
+\end{document}
