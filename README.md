@@ -1,7 +1,12 @@
 # TikZ Gallery
 
+[![Pages](https://img.shields.io/badge/pages-build-green.svg)](https://mmikhasenko.github.io/TikzHadronGallery/)
+![AI contribution](https://img.shields.io/badge/significant_AI_contribution-human_in_charge-orange.svg)
+
 Static gallery generated from real TikZ source files stored in this repository.
 This repository is a curated collection of my TikZ pictures, used primarily in talks and presentations.
+
+Files are created and collected by the author over years. CI and documentation are build with Codex and Cursor.
 
 ## Source of Truth
 - `data/figures/<class-name>/*.tex`
