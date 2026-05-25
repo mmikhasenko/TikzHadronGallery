@@ -249,10 +249,48 @@ console.log(`Excluded non-renderable files: ${excludedCount}`);
 if (!hasLatexmk) {
   console.log("Note: latexmk not found, skipping TeX->PDF compilation and using sidecars only.");
 }
+const missingAssets = uniqueFigures.filter((figure) => !figure.pdf_url && !figure.png_url);
+const activeNewtx = findActiveNewtxLines(instances);
+
 console.log(`Compile failures logged: ${compileFailures.length}`);
+console.log(`Figures missing PDF/PNG: ${missingAssets.length}`);
+console.log(`Active newtx package lines: ${activeNewtx.length}`);
 console.log(`Wrote: ${galleryPath}`);
 console.log(`Wrote: ${reportPath}`);
 console.log(`Wrote: ${compileFailuresPath}`);
+
+if (hasLatexmk && activeNewtx.length > 0) {
+  console.error("Figures still load newtxtext/newtxmath (not available in CI):");
+  for (const relPath of activeNewtx.slice(0, 40)) {
+    console.error(`  - ${relPath}`);
+  }
+  if (activeNewtx.length > 40) {
+    console.error(`  ... and ${activeNewtx.length - 40} more`);
+  }
+  process.exit(1);
+}
+
+if (hasLatexmk && compileFailures.length > 0) {
+  console.error("LaTeX compile failures:");
+  for (const failure of compileFailures.slice(0, 40)) {
+    console.error(`  - ${failure.figure}: ${failure.message}`);
+  }
+  if (compileFailures.length > 40) {
+    console.error(`  ... and ${compileFailures.length - 40} more`);
+  }
+  process.exit(1);
+}
+
+if (hasLatexmk && missingAssets.length > 0) {
+  console.error("Figures without generated PDF or PNG:");
+  for (const figure of missingAssets.slice(0, 40)) {
+    console.error(`  - ${figure.class_name}/${figure.stem}.tex`);
+  }
+  if (missingAssets.length > 40) {
+    console.error(`  ... and ${missingAssets.length - 40} more`);
+  }
+  process.exit(1);
+}
 
 async function* walk(dir) {
   const entries = await fsp.readdir(dir, { withFileTypes: true });
@@ -302,6 +340,17 @@ function prettifyTitle(stem) {
     .replace(/\s+/g, " ")
     .trim();
   return title.length ? title[0].toUpperCase() + title.slice(1) : "Untitled";
+}
+
+function findActiveNewtxLines(items) {
+  const offenders = [];
+  for (const item of items) {
+    const line = item.tex_code.split(/\r?\n/).find((row) => /newtxtext/.test(row));
+    if (line && !/^\s*%/.test(line)) {
+      offenders.push(item.rel_path.replace(/\\/g, "/"));
+    }
+  }
+  return offenders.sort((a, b) => a.localeCompare(b));
 }
 
 function isLikelyBeamerSlide(source) {
@@ -490,7 +539,23 @@ function prepareTexForCompilation(canonical) {
     }
   }
 
+  tex = ensureMathPackages(tex);
+
   return { tex, dependencies, unresolved, resolvedCount };
+}
+
+function ensureMathPackages(tex) {
+  if (!/\\documentclass/.test(tex)) return tex;
+
+  const needsAmsmath = /\\mathbb|\\text\{|_\\text\{/.test(tex);
+  const needsAmssymb = /\\mathbb/.test(tex);
+  const packages = [];
+  if (needsAmsmath && !/\\usepackage\{amsmath/.test(tex)) packages.push("\\usepackage{amsmath}");
+  if (needsAmssymb && !/\\usepackage\{amssymb/.test(tex)) packages.push("\\usepackage{amssymb}");
+  if (packages.length === 0) return tex;
+
+  const injection = `${packages.join("\n")}\n`;
+  return tex.replace(/(\\documentclass[^\n]*\n)/, `$1${injection}`);
 }
 
 function normalizeInputRef(ref) {
