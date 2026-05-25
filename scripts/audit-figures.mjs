@@ -419,7 +419,12 @@ function renderPngFromPdf(pdfPath, pngTarget) {
 }
 
 async function writeThumb(sourcePng, thumbTarget) {
-  const resize = spawnSync("magick", [sourcePng, "-thumbnail", "600x380^", "-gravity", "center", "-extent", "600x380", thumbTarget], { stdio: "ignore" });
+  // Fit the full figure inside the card (letterbox). Cover-crop (^) hides wide equations.
+  const resize = spawnSync(
+    "magick",
+    [sourcePng, "-background", "white", "-gravity", "center", "-resize", "600x380>", "-extent", "600x380", thumbTarget],
+    { stdio: "ignore" }
+  );
   if (resize.status === 0 && fs.existsSync(thumbTarget)) return;
   await fsp.copyFile(sourcePng, thumbTarget);
 }
@@ -442,12 +447,17 @@ function compilePdfFromTex(canonical, outPdfPath) {
     let entryFile = sourcePath;
     if (!hasDocumentClass) {
       const wrapperPath = path.join(tmpDir, "wrapper.tex");
+      const tikzPictureCount = (prepared.tex.match(/\\begin\{tikzpicture\}/g) || []).length;
+      const useVarwidth = tikzPictureCount > 1;
       const wrapper = [
-        "\\documentclass[tikz,border=2pt]{standalone}",
+        useVarwidth
+          ? "\\documentclass[varwidth,border=2pt]{standalone}"
+          : "\\documentclass[tikz,border=2pt]{standalone}",
         "\\usepackage{tikz}",
         "\\usepackage{amsmath}",
         "\\usepackage{amssymb}",
         "\\begin{document}",
+        "\\nopagecolor",
         "\\input{source.tex}",
         "\\end{document}",
         ""

@@ -7,6 +7,4 @@ diagrams/diagrams-4.tex
 diagrams/diagrams-5.tex
 diagrams/diagrams-6.tex
 diagrams/diagrams-7.tex
-disc-k/disc_K.tex
-k-diag/K_diag.tex
 rescattering-equation/rescattering_equation.tex
