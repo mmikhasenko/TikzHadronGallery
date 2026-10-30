@@ -22,10 +22,10 @@ const withBase = (assetPath) => `${base}${String(assetPath || "").replace(/^\/+/
   </head>
   <body>
     <main>
-      <a class="back" href={base}>Back to classes</a>
+      <a class="back" href={base}>← All categories</a>
       <section class="hero banner">
         <h1>{classItem.class_name}</h1>
-        <p>{classItem.figure_count} figures in this class</p>
+        <p>{classItem.figure_count} {classItem.figure_count === 1 ? "figure" : "figures"} in this category</p>
       </section>
 
       <section class="grid">

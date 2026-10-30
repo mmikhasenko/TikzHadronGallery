@@ -55,7 +55,7 @@ main {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(245px, 100%), 1fr));
   gap: 16px;
 }
 
@@ -82,7 +82,8 @@ main {
 .thumb {
   width: 100%;
   aspect-ratio: 16 / 10;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 8px;
   border-radius: 12px;
   margin-bottom: 12px;
   border: 1px solid #e7ecf4;
@@ -158,4 +159,15 @@ main {
   padding: 4px 10px;
   font-size: 0.75rem;
   margin-top: 8px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card { transition: none; }
+  .card:hover { transform: none; }
 }
